@@ -5,11 +5,11 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 32.0366
+radius = 45.0
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Node\n\nvar selfref = preload(\"res://bubble.tscn\");\nvar infected = false;\nvar selfSize = 32;\nvar explodeForce = 0.0;\n\nfunc _ready():\n\tif(infected):\n\t\tget_node(\"node/Sprite\").set_modulate(Color(1,0,0, 1));\n\nfunc begin_exploding():\n\tif(!infected):\n\t\tinfected = true;\n\t\tget_node(\"animation\").play(\"modulate\");\n\nfunc _on_Panel_input_event( ev ):\n\tif(!infected && ev.type == InputEvent.MOUSE_BUTTON):\n\t\tif(ev.pressed):\n\t\t\tGlobals.set(\"curr_pressed_bubble\", self);\n\t\telse:\n\t\t\tclickInfect(Globals.get(\"last_energy_usage\"));\n\t\t\tGlobals.set(\"curr_pressed_bubble\", null);\n\nfunc clickInfect(val):\n\texplodeForce = val;\n\tprint(explodeForce);\n\tbegin_exploding();\n\tget_node(\"animation\").play(\"blums\");\n\nfunc initShape(size):\n\tselfSize = size;\n\t#remove_child(get_node(\"shape\"));\n\t\n\tvar newShape = CircleShape2D.new();\n\t#var newCollider = CollisionShape2D.new();\n\tget_node(\"shape\").set_shape(newShape);\n\tnewShape.set_radius(selfSize);\n\t#add_child(newCollider);\n\nfunc _on_bubble_body_enter( body ):\n\tif (infected && body extends selfref.instance().get_script()):\n\t\tbody.begin_exploding();\n\tpass # replace with function body\n\n\nfunc _on_AnimationPlayer_finished():\n\tvar chunks = rand_range(5,10);\n\tif(selfSize > 5):\n\t\tfor i in range(chunks):\n\t\t\tvar newChild = selfref.instance();\n\t\t\tnewChild.set_pos(Vector2(get_pos().x+rand_range(-selfSize, selfSize), get_pos().y+rand_range(-selfSize, selfSize)));\n\t\t\tnewChild.get_node(\"node\").set_scale(get_node(\"node\").get_scale()/chunks*2);\n\t\t\tnewChild.apply_impulse(Vector2(0,0), Vector2(rand_range(-explodeForce*10, explodeForce*10), rand_range(-explodeForce*10, explodeForce*10)));\n\t\t\tnewChild.initShape(selfSize/chunks*2);\n\t\t\tnewChild.explodeForce = explodeForce;\n\t\t\tnewChild.infected = true;\n\t\t\tget_parent().add_child(newChild);\n\t\t\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n"
+script/source = "extends Node\n\nvar selfref = preload(\"res://bubble.tscn\");\nvar infected = false;\nvar selfSize = 45;\nvar explodeForce = 0.0;\n\nfunc _ready():\n\tpass;\nfunc begin_exploding(force):\n\tif(!infected):\n\t\texplodeForce = force;\n\t\tinfected = true;\n\t\tget_node(\"animation\").play(\"modulate\");\n\nfunc _on_Panel_input_event( ev ):\n\tif(!infected && ev.type == InputEvent.MOUSE_BUTTON):\n\t\tif(ev.pressed):\n\t\t\tGlobals.set(\"curr_pressed_bubble\", self);\n\t\telse:\n\t\t\tclickInfect(Globals.get(\"last_energy_usage\"));\n\t\t\tGlobals.set(\"curr_pressed_bubble\", null);\n\nfunc clickInfect(val):\n\tprint(explodeForce);\n\tbegin_exploding(val);\n\tget_node(\"animation\").play(\"blums\");\n\nfunc initShape(size):\n\tselfSize = size;\n\t#remove_child(get_node(\"shape\"));\n\t\n\tvar newShape = CircleShape2D.new();\n\t#var newCollider = CollisionShape2D.new();\n\tget_node(\"shape\").set_shape(newShape);\n\tnewShape.set_radius(selfSize);\n\t#add_child(newCollider);\n\nfunc _on_bubble_body_enter( body ):\n\tif (infected && body extends selfref.instance().get_script()):\n\t\tbody.begin_exploding(explodeForce);\n\tpass # replace with function body\n\n\nfunc _on_AnimationPlayer_finished():\n\tvar chunks = rand_range(5,10);\n\tif(selfSize > 5):\n\t\tfor i in range(chunks):\n\t\t\tvar newChild = selfref.instance();\n\t\t\tnewChild.set_pos(Vector2(get_pos().x+rand_range(-selfSize, selfSize), get_pos().y+rand_range(-selfSize, selfSize)));\n\t\t\tnewChild.get_node(\"node\").set_scale(get_node(\"node\").get_scale()/chunks);\n\t\t\tnewChild.apply_impulse(Vector2(0,0), Vector2(rand_range(-explodeForce*10, explodeForce*10), rand_range(-explodeForce*10, explodeForce*10)));\n\t\t\tnewChild.initShape(selfSize/chunks*2);\n\t\t\tnewChild.get_node(\"node/Sprite\").set_texture(load(\"res://image/Wisp View1.png\"));\n\t\t\tnewChild.explodeForce = explodeForce;\n\t\t\tnewChild.infected = true;\n\t\t\tget_parent().add_child(newChild);\n\t\t\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n"
 
 [sub_resource type="Animation" id=3]
 
@@ -75,7 +75,7 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="node"]
 
-transform/pos = Vector2( 0.347427, -0.140263 )
+transform/pos = Vector2( 0.614453, 0.327811 )
 texture = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="node"]
