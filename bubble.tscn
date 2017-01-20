@@ -11,7 +11,7 @@ radius = 32.0366
 
 script/source = "extends Node\n\nvar selfref = preload(\"res://bubble.tscn\");\nvar infected = false;\nvar selfSize = 32;\n\nfunc _ready():\n\tif(infected):\n\t\tget_node(\"node/Sprite\").set_modulate(Color(1,0,0, 1));\n\nfunc begin_exploding():\n\tif(!infected):\n\t\tinfected = true;\n\t\tget_node(\"animation\").play(\"modulate\");\n\nfunc _on_Panel_input_event( ev ):\n\tif(ev.type == InputEvent.MOUSE_BUTTON && ev.pressed):\n\t\tbegin_exploding();\n\t\tget_node(\"animation\").play(\"blums\");\n\tpass # replace with function body\n\nfunc initShape(size):\n\tselfSize = size;\n\t#remove_child(get_node(\"shape\"));\n\t\n\tvar newShape = CircleShape2D.new();\n\t#var newCollider = CollisionShape2D.new();\n\tget_node(\"shape\").set_shape(newShape);\n\tnewShape.set_radius(selfSize);\n\t#add_child(newCollider);\n\nfunc _on_bubble_body_enter( body ):\n\tif (infected && body extends selfref.instance().get_script()):\n\t\tbody.begin_exploding();\n\tpass # replace with function body\n\n\nfunc _on_AnimationPlayer_finished():\n\tvar chunks = rand_range(5,10);\n\tif(selfSize > 5):\n\t\tfor i in range(chunks):\n\t\t\tvar newChild = selfref.instance();\n\t\t\tnewChild.set_pos(get_pos());\n\t\t\tnewChild.get_node(\"node\").set_scale(get_node(\"node\").get_scale()/chunks*2);\n\t\t\tnewChild.apply_impulse(Vector2(0,0), Vector2(rand_range(-500, 500), rand_range(-500, 500)));\n\t\t\tnewChild.initShape(selfSize/chunks*2);\n\t\t\tnewChild.infected = true;\n\t\t\tget_parent().add_child(newChild);\n\t\t\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n"
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource/name = "blums"
 length = 1.0
@@ -23,9 +23,8 @@ tracks/0/interp = 2
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.15, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.85, 0.85 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "modulate"
 length = 1.0
 loop = false
 step = 0.1
@@ -91,8 +90,8 @@ margin/bottom = 28.0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/blums = SubResource( 4 )
-anims/modulate = SubResource( 3 )
+anims/blums = SubResource( 3 )
+anims/modulate = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
