@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://image/Wrinkles.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 885.031, 452.166, 869.544, 312.783, 879.869, 168.238, 957.303, 90.8036, 1065.71, 70.1543, 1189.61, 70.1543, 1267.04, 126.94, 1292.85, 255.998, 1282.53, 374.731, 1215.42, 488.302, 1086.36, 503.789 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+transform/pos = Vector2( -262.251, -128.032 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.999999, 0, 0, 1, -1086.82, -319.668 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( -1086.82, -319.668 )
+transform/scale = Vector2( 0.999999, 1 )
+build_mode = 0
+polygon = Vector2Array( 885.031, 452.166, 869.544, 312.783, 879.869, 168.238, 957.303, 90.8036, 1065.71, 70.1543, 1189.61, 70.1543, 1267.04, 126.94, 1292.85, 255.998, 1282.53, 374.731, 1215.42, 488.302, 1086.36, 503.789 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Wrinkles" type="Sprite" parent="CollisionPolygon2D"]
+
+transform/pos = Vector2( 1088.22, 296.672 )
+transform/scale = Vector2( 1.6191, 1.64308 )
+texture = ExtResource( 1 )
+
+
