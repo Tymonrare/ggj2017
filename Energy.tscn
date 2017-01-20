@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control\nvar Energy=100;\nfunc _ready():\n\tset_process(true);\n\t\nfunc _process(delta):\n\t\n\tif(Input.is_mouse_button_pressed(BUTTON_LEFT)):\n\t\tEnergy -= 100*delta;\n\t\tget_node(\"Panel\").set_size(Vector2(Energy,20));\n\t\n\t"
+
+[node name="Control" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 100.0
+margin/bottom = 20.0
+
+
