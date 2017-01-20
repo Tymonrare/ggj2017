@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "tool\n\nextends Node\n\nvar spawned = false;\nvar bubbleref = preload(\"res://bubble.tscn\");\n\nfunc _ready():\n\tif(spawned): return;\n\tspawned = true;\n\tfor x in range(10):\n\t\tfor y in range(10):\n\t\t\tvar bubble = bubbleref.instance();\n\t\t\tbubble.set_pos(Vector2(x*100+rand_range(-30,30),y*100+rand_range(-30,30)));\n\t\t\tadd_child(bubble);\n\tpass;"
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 421.291, 10 )
 
 [node name="map" type="Node"]
+
+script/script = SubResource( 1 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
@@ -47,7 +53,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 658.9, 381.069 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -59,7 +65,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
