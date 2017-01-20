@@ -69,4 +69,424 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 465.848, 418.426 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 3, 3 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[connection signal="body_enter" from="bubble" to="bubble" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble" to="bubble" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 2" to="bubble 2" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 2" to="bubble 2" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 3" to="bubble 3" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 3" to="bubble 3" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 4" to="bubble 4" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 4" to="bubble 4" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 5" to="bubble 5" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 5" to="bubble 5" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 6" to="bubble 6" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 6" to="bubble 6" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 7" to="bubble 7" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 7" to="bubble 7" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 8" to="bubble 8" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 8" to="bubble 8" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 9" to="bubble 9" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 9" to="bubble 9" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 10" to="bubble 10" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 10" to="bubble 10" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 11" to="bubble 11" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 11" to="bubble 11" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 12" to="bubble 12" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 12" to="bubble 12" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 13" to="bubble 13" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 13" to="bubble 13" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 14" to="bubble 14" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 14" to="bubble 14" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 15" to="bubble 15" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 15" to="bubble 15" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 16" to="bubble 16" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 16" to="bubble 16" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 17" to="bubble 17" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 17" to="bubble 17" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 18" to="bubble 18" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 18" to="bubble 18" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 19" to="bubble 19" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 19" to="bubble 19" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 20" to="bubble 20" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 20" to="bubble 20" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 21" to="bubble 21" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 21" to="bubble 21" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 22" to="bubble 22" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 22" to="bubble 22" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 23" to="bubble 23" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 23" to="bubble 23" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 24" to="bubble 24" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 24" to="bubble 24" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 25" to="bubble 25" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 25" to="bubble 25" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 26" to="bubble 26" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 26" to="bubble 26" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 27" to="bubble 27" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 27" to="bubble 27" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 28" to="bubble 28" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 28" to="bubble 28" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 29" to="bubble 29" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 29" to="bubble 29" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 30" to="bubble 30" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 30" to="bubble 30" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 31" to="bubble 31" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 31" to="bubble 31" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 32" to="bubble 32" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 32" to="bubble 32" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 33" to="bubble 33" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 33" to="bubble 33" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 34" to="bubble 34" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 34" to="bubble 34" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 35" to="bubble 35" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 35" to="bubble 35" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 36" to="bubble 36" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 36" to="bubble 36" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 37" to="bubble 37" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 37" to="bubble 37" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 38" to="bubble 38" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 38" to="bubble 38" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 39" to="bubble 39" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 39" to="bubble 39" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 40" to="bubble 40" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 40" to="bubble 40" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 41" to="bubble 41" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 41" to="bubble 41" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 42" to="bubble 42" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 42" to="bubble 42" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 43" to="bubble 43" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 43" to="bubble 43" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 44" to="bubble 44" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 44" to="bubble 44" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 45" to="bubble 45" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 45" to="bubble 45" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 46" to="bubble 46" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 46" to="bubble 46" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 47" to="bubble 47" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 47" to="bubble 47" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 48" to="bubble 48" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 48" to="bubble 48" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 49" to="bubble 49" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 49" to="bubble 49" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 50" to="bubble 50" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 50" to="bubble 50" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 51" to="bubble 51" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 51" to="bubble 51" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 52" to="bubble 52" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 52" to="bubble 52" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 53" to="bubble 53" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 53" to="bubble 53" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 54" to="bubble 54" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 54" to="bubble 54" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 55" to="bubble 55" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 55" to="bubble 55" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 56" to="bubble 56" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 56" to="bubble 56" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 57" to="bubble 57" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 57" to="bubble 57" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 58" to="bubble 58" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 58" to="bubble 58" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 59" to="bubble 59" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 59" to="bubble 59" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 60" to="bubble 60" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 60" to="bubble 60" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 61" to="bubble 61" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 61" to="bubble 61" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 62" to="bubble 62" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 62" to="bubble 62" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 63" to="bubble 63" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 63" to="bubble 63" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 64" to="bubble 64" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 64" to="bubble 64" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 65" to="bubble 65" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 65" to="bubble 65" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 66" to="bubble 66" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 66" to="bubble 66" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 67" to="bubble 67" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 67" to="bubble 67" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 68" to="bubble 68" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 68" to="bubble 68" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 69" to="bubble 69" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 69" to="bubble 69" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 70" to="bubble 70" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 70" to="bubble 70" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 71" to="bubble 71" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 71" to="bubble 71" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 72" to="bubble 72" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 72" to="bubble 72" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 73" to="bubble 73" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 73" to="bubble 73" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 74" to="bubble 74" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 74" to="bubble 74" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 75" to="bubble 75" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 75" to="bubble 75" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 76" to="bubble 76" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 76" to="bubble 76" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 77" to="bubble 77" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 77" to="bubble 77" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 78" to="bubble 78" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 78" to="bubble 78" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 79" to="bubble 79" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 79" to="bubble 79" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 80" to="bubble 80" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 80" to="bubble 80" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 81" to="bubble 81" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 81" to="bubble 81" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 82" to="bubble 82" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 82" to="bubble 82" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 83" to="bubble 83" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 83" to="bubble 83" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 84" to="bubble 84" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 84" to="bubble 84" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 85" to="bubble 85" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 85" to="bubble 85" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 86" to="bubble 86" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 86" to="bubble 86" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 87" to="bubble 87" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 87" to="bubble 87" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 88" to="bubble 88" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 88" to="bubble 88" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 89" to="bubble 89" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 89" to="bubble 89" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 90" to="bubble 90" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 90" to="bubble 90" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 91" to="bubble 91" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 91" to="bubble 91" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 92" to="bubble 92" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 92" to="bubble 92" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 93" to="bubble 93" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 93" to="bubble 93" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 94" to="bubble 94" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 94" to="bubble 94" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 95" to="bubble 95" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 95" to="bubble 95" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 96" to="bubble 96" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 96" to="bubble 96" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 97" to="bubble 97" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 97" to="bubble 97" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 98" to="bubble 98" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 98" to="bubble 98" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 99" to="bubble 99" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 99" to="bubble 99" method="_on_bubble_input_event"]
+
+[connection signal="body_enter" from="bubble 100" to="bubble 100" method="_on_bubble_body_enter"]
+
+[connection signal="input_event" from="bubble 100" to="bubble 100" method="_on_bubble_input_event"]
+
 
