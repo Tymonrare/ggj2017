@@ -2,9 +2,9 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Control\n\nvar Energy=100;\nvar prevEnergy = 100;\nvar continues_pressed = false;\n\nfunc _ready():\n\tset_process(true);\n\t\nfunc _process(delta):\n\t\n\tif(Input.is_mouse_button_pressed(BUTTON_LEFT) && Globals.get(\"curr_pressed_bubble\")):\n\t\tcontinues_pressed = true;\n\t\tif(Energy > 0):\n\t\t\tEnergy -= 100*delta;\n\t\telse:\n\t\t\tEnergy = 0;\n\t\tget_node(\"Panel\").set_size(Vector2(Energy,20));\n\t\tGlobals.set(\"last_energy_usage\", prevEnergy - Energy);\n\t\t\n\telif(continues_pressed):\n\t\tcontinues_pressed = false;\n\t\tprevEnergy = Energy;\n\t\n\t"
+script/source = "extends Control\n\nvar Energy=100;\nvar prevEnergy = 100;\nvar continues_pressed = false;\n\nfunc _ready():\n\tset_process(true);\n\t\nfunc _process(delta):\n\t\n\tif(Input.is_mouse_button_pressed(BUTTON_LEFT) && Globals.get(\"curr_pressed_bubble\")):\n\t\tcontinues_pressed = true;\n\t\tif(Energy > 0):\n\t\t\tEnergy -= 100*delta;\n\t\telse:\n\t\t\tEnergy = 0;\n\t\tget_node(\"Panel\").set_size(Vector2(Energy,20));\n\t\tGlobals.set(\"last_energy_usage\", prevEnergy - Energy);\n\t\t\n\telif(continues_pressed):\n\t\t\n\t\tcontinues_pressed = false;\n\t\tprevEnergy = Energy;\n\t\n\t"
 
-[node name="Control" type="Control"]
+[node name="Energy" type="Control"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
