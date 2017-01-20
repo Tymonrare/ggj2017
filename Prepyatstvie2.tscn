@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://image/Brick Slime 1.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -47.8417, 34.4752, -41.6111, 75.6028, -72.7638, 106.448, -95.0157, 113.303, -95.9057, 84.7422, -87.8951, 23.0508 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -81.6645, -46.6377, -77.2142, -108.329, -60.3027, -106.044, -52.2921, -78.6258, -49.6218, -14.6495 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -87.8951, 23.0508, -81.6645, -46.6377, -49.6218, -14.6495, -47.8417, 34.4752 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -44.2814, 104.164, -72.7638, 106.448, -41.6111, 75.6028 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+transform/pos = Vector2( -292.217, -2.71764 )
+transform/scale = Vector2( 11.8929, 9.2658 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 131.335, -13.3384 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 131.335, -13.3384 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 131.335, -13.3384 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 131.335, -13.3384 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( 131.335, -13.3384 )
+build_mode = 0
+polygon = Vector2Array( -44.2814, 104.164, -41.6111, 75.6028, -47.8417, 34.4752, -49.6218, -14.6495, -52.2921, -78.6258, -60.3027, -106.044, -77.2142, -108.329, -81.6645, -46.6377, -87.8951, 23.0508, -95.9057, 84.7422, -95.0157, 113.303, -72.7638, 106.448 )
+shape_range = Vector2( 0, 3 )
+trigger = false
+
+[node name="Brick Slime 1" type="Sprite" parent="CollisionPolygon2D 2"]
+
+transform/pos = Vector2( -66.6649, 0.0626335 )
+transform/scale = Vector2( 0.221612, 0.782118 )
+texture = ExtResource( 1 )
+
+

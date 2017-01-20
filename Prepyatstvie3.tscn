@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://image/Wooden Slime 1.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 373.293, 30.3438, 393.649, 9.98701, 401.052, 35.8956, 380.695, 69.2067 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 308.805, 87.0639, 318.327, 65.2979, 331.931, 40.8112, 344.174, 23.1264, 360.338, 8.1364, 373.293, 30.3438, 380.695, 69.2067, 386.247, 102.518, 318.327, 107.47 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 308.805, 87.0639, 280.237, 91.145, 277.516, 76.1809, 302.003, 69.3791, 318.327, 65.2979 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 318.327, 65.2979, 318.327, 44.8923, 331.931, 40.8112 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 314.246, 133.317, 386.247, 102.518, 410.305, 106.219, 418.478, 157.921, 304.724, 148.281 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 314.246, 133.317, 318.327, 107.47, 386.247, 102.518 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 288.399, 201.335, 281.597, 176.849, 282.958, 155.083, 304.724, 148.281, 418.478, 157.921, 424.994, 197.832, 425.808, 244.259, 402.188, 284.984, 378.567, 293.129, 341.832, 293.131 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 277.516, 227.182, 288.399, 201.335, 341.832, 293.131, 304.724, 281.597, 281.597, 267.994 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+transform/pos = Vector2( 0, 2.72075 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, -353.492, -185.547 )
+shapes/7/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( -353.492, -185.547 )
+build_mode = 0
+polygon = Vector2Array( 304.724, 281.597, 281.597, 267.994, 277.516, 227.182, 288.399, 201.335, 281.597, 176.849, 282.958, 155.083, 304.724, 148.281, 314.246, 133.317, 318.327, 107.47, 308.805, 87.0639, 280.237, 91.145, 277.516, 76.1809, 302.003, 69.3791, 318.327, 65.2979, 318.327, 44.8923, 331.931, 40.8112, 344.174, 23.1264, 360.338, 8.1364, 373.293, 30.3438, 393.649, 9.98701, 401.052, 35.8956, 380.695, 69.2067, 386.247, 102.518, 410.305, 106.219, 418.478, 157.921, 424.994, 197.832, 425.808, 244.259, 402.188, 284.984, 378.567, 293.129, 341.832, 293.131 )
+shape_range = Vector2( 0, 7 )
+trigger = false
+
+[node name="Wooden Slime 1" type="Sprite" parent="CollisionPolygon2D"]
+
+transform/pos = Vector2( 352.542, 153.186 )
+texture = ExtResource( 1 )
+
+
