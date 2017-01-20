@@ -1,30 +1,366 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://Prepytstvie.tscn" type="PackedScene" id=1]
+[ext_resource path="res://image/Wooden Slime 1.png" type="Texture" id=1]
 [ext_resource path="res://Prepyatstvie2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prepyatstvie3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prepyatstvie4.tscn" type="PackedScene" id=4]
 
 [node name="Node" type="Node"]
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 1 )]
+[node name="Wooden Slime 1" type="Sprite" parent="."]
 
-transform/pos = Vector2( 596.837, 35.8018 )
+transform/pos = Vector2( -365.385, 868.604 )
+transform/rot = 49.2628
+transform/scale = Vector2( 1.4954, 0.710492 )
+texture = ExtResource( 1 )
+modulate = Color( 0.542969, 0.542969, 0.542969, 1 )
+
+[node name="Wooden Slime2" type="Sprite" parent="."]
+
+transform/pos = Vector2( -1546.91, 73.6066 )
+transform/rot = 130.793
+transform/scale = Vector2( 1.28144, 1.30983 )
+texture = ExtResource( 1 )
+modulate = Color( 0.542969, 0.542969, 0.542969, 1 )
 
 [node name="StaticBody2D 2" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -1057.89, -87.0168 )
-transform/scale = Vector2( 5, 4 )
+transform/pos = Vector2( -1846.24, 62.569 )
+transform/rot = -26.9335
+transform/scale = Vector2( 1.92635, 1.80417 )
+
+[node name="StaticBody2D12" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1518.27, -181.306 )
+transform/rot = -75.1367
+transform/scale = Vector2( 1.92635, 1.80417 )
+
+[node name="StaticBody2D13" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1930.33, 462.019 )
+transform/rot = 4.81521
+transform/scale = Vector2( 1.92635, 1.80417 )
+
+[node name="StaticBody2D37" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -756.596, 275.692 )
+transform/rot = -165.257
+transform/scale = Vector2( 1.60492, 1.269 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1841.35, 743.585 )
+transform/rot = 34.3999
+transform/scale = Vector2( 1.4954, 0.710492 )
+
+[node name="StaticBody2D14" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1738.89, 899.171 )
+transform/rot = 49.2628
+transform/scale = Vector2( 1.4954, 0.710492 )
+
+[node name="StaticBody2D16" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1738.89, 899.171 )
+transform/rot = 49.2628
+transform/scale = Vector2( 1.4954, 0.710492 )
+
+[node name="StaticBody2D15" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1632.63, 1001.63 )
+transform/rot = 65.6676
+transform/scale = Vector2( 1.4954, 0.710492 )
+
+[node name="StaticBody2D17" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -1500.15, 1020.94 )
+transform/rot = 87.737
+transform/scale = Vector2( 1.4954, 0.710492 )
+
+[node name="StaticBody2D28" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 571.354, 790.192 )
+transform/rot = 57.1949
+transform/scale = Vector2( 1.35261, 0.471607 )
+
+[node name="StaticBody2D29" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 548.633, 785.647 )
+transform/rot = -0.77104
+transform/scale = Vector2( 1.35261, 0.471607 )
+
+[node name="StaticBody2D11" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 225.35, 25.3856 )
+transform/rot = 97.0142
+transform/scale = Vector2( 1.88433, 1.37066 )
+
+[node name="StaticBody2D4" parent="StaticBody2D11" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 32.5378, -196.554 )
+transform/rot = -17.309
+transform/scale = Vector2( 1.06678, 0.962794 )
+
+[node name="StaticBody2D26" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 462.959, -133.02 )
+transform/rot = 234.684
+transform/scale = Vector2( 1.88433, 1.37066 )
+
+[node name="StaticBody2D4" parent="StaticBody2D26" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 32.5378, -196.554 )
+transform/rot = -17.309
+transform/scale = Vector2( 1.06678, 0.962794 )
+
+[node name="StaticBody2D27" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 748.714, 373.009 )
+transform/rot = 186.34
+transform/scale = Vector2( 1.5082, 1.06286 )
+
+[node name="StaticBody2D4" parent="StaticBody2D27" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 32.5378, -196.554 )
+transform/rot = -17.309
+transform/scale = Vector2( 1.06678, 0.962794 )
 
 [node name="StaticBody2D 3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -76.7291, 650.33 )
-transform/rot = 90.0
-transform/scale = Vector2( 2.5, 2.5 )
+transform/pos = Vector2( -584.638, -161.182 )
+transform/rot = 95.726
+transform/scale = Vector2( 0.87356, 3.97396 )
 
 [node name="StaticBody2D 4" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -141.193, 32.9748 )
-transform/scale = Vector2( 1.3, 1.3 )
+transform/pos = Vector2( -575.779, 981.73 )
+transform/scale = Vector2( 0.889594, 0.375906 )
+
+[node name="StaticBody2D18" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1421.47, 902.579 )
+transform/rot = -119.562
+transform/scale = Vector2( 0.219516, 0.278025 )
+
+[node name="StaticBody2D19" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1370.37, 844.316 )
+transform/rot = -219.142
+transform/scale = Vector2( 0.219516, 0.359859 )
+
+[node name="StaticBody2D20" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1369.21, 845.26 )
+transform/rot = -219.142
+transform/scale = Vector2( 0.266233, 0.359859 )
+
+[node name="StaticBody2D21" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1312.16, 836.092 )
+transform/rot = -325.121
+transform/scale = Vector2( 0.208645, 0.382319 )
+
+[node name="StaticBody2D22" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1277.44, 871.045 )
+transform/rot = -297.154
+transform/scale = Vector2( 0.228275, 0.300925 )
+
+[node name="StaticBody2D23" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1190.89, 895.988 )
+transform/rot = -374.641
+transform/scale = Vector2( 0.566723, 0.315141 )
+
+[node name="StaticBody2D25" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1071.18, 962.647 )
+transform/rot = -460.078
+transform/scale = Vector2( 0.566723, 0.315141 )
+
+[node name="StaticBody2D24" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1135.12, 925.917 )
+transform/rot = -374.641
+transform/scale = Vector2( 0.545232, 0.232879 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -375.821, 976.597 )
+transform/scale = Vector2( 0.501211, 0.436778 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -255.88, 921.585 )
+transform/scale = Vector2( 0.377174, 0.983141 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -110.923, 986.265 )
+transform/scale = Vector2( 0.64731, 0.286326 )
+
+[node name="StaticBody2D8" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 54.6673, 971.461 )
+transform/scale = Vector2( 0.594841, 0.459818 )
+
+[node name="StaticBody2D30" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 319.1, 959.06 )
+transform/rot = 3.7631
+transform/scale = Vector2( 0.551105, 0.421331 )
+
+[node name="StaticBody2D31" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 466.785, 940.883 )
+transform/rot = 11.2665
+transform/scale = Vector2( 0.551105, 0.421331 )
+
+[node name="StaticBody2D32" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 584.121, 861.478 )
+transform/rot = 37.7729
+transform/scale = Vector2( 0.673016, 0.421331 )
+
+[node name="StaticBody2D9" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 195.833, 952.367 )
+transform/scale = Vector2( 0.363984, 0.582374 )
+
+[node name="StaticBody2D10" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -850.63, 975.699 )
+transform/scale = Vector2( 1.17683, 0.502938 )
+
+[node name="StaticBody2D33" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -819.242, 429.473 )
+transform/scale = Vector2( 0.582373, 0.829259 )
+
+[node name="StaticBody2D34" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -836.306, 571.341 )
+transform/rot = -189.783
+transform/scale = Vector2( 0.582373, 0.829259 )
+
+[node name="StaticBody2D36" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 244.838, 262.48 )
+transform/rot = -201.234
+transform/scale = Vector2( 0.457142, 0.585313 )
+
+[node name="StaticBody2D38" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1406.13, 507.736 )
+transform/rot = -201.234
+transform/scale = Vector2( 0.334897, -0.318188 )
+
+[node name="StaticBody2D45" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1450.98, 458.571 )
+transform/rot = -246.896
+transform/scale = Vector2( 0.36557, -0.251765 )
+
+[node name="StaticBody2D55" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1329.03, 405.09 )
+transform/rot = -229.843
+transform/scale = Vector2( 0.209427, -0.174208 )
+
+[node name="StaticBody2D46" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1273.84, 158.264 )
+transform/rot = -246.896
+transform/scale = Vector2( 0.3149, -0.390905 )
+
+[node name="StaticBody2D56" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1205.09, 144.563 )
+transform/rot = -260.917
+transform/scale = Vector2( 0.270425, -0.367101 )
+
+[node name="StaticBody2D39" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1345.15, 533.104 )
+transform/rot = -180.029
+transform/scale = Vector2( 0.326186, -0.209525 )
+
+[node name="StaticBody2D40" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1282.86, 558.746 )
+transform/rot = -227.418
+transform/scale = Vector2( 0.254603, -0.220972 )
+
+[node name="StaticBody2D41" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1265.09, 598.059 )
+transform/rot = -257.009
+transform/scale = Vector2( 0.267287, -0.220972 )
+
+[node name="StaticBody2D42" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1248.55, 657.487 )
+transform/rot = -233.375
+transform/scale = Vector2( 0.267287, -0.15325 )
+
+[node name="StaticBody2D43" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1205.18, 679.355 )
+transform/rot = -175.829
+transform/scale = Vector2( 0.267287, -0.15325 )
+
+[node name="StaticBody2D44" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1152.48, 693.498 )
+transform/rot = -206.773
+transform/scale = Vector2( 0.253447, -0.162709 )
+
+[node name="StaticBody2D47" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1068.37, 624.812 )
+transform/rot = -218.901
+transform/scale = Vector2( 0.27563, -0.181201 )
+
+[node name="StaticBody2D48" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1114.56, 600.346 )
+transform/rot = -182.934
+transform/scale = Vector2( 0.138687, -0.170834 )
+
+[node name="StaticBody2D49" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1146.72, 590.123 )
+transform/rot = -215.235
+transform/scale = Vector2( 0.159364, -0.129857 )
+
+[node name="StaticBody2D50" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1166.02, 562.576 )
+transform/rot = -250.237
+transform/scale = Vector2( 0.177378, -0.129857 )
+
+[node name="StaticBody2D51" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1186.53, 521.431 )
+transform/rot = -240.37
+transform/scale = Vector2( 0.177378, -0.129857 )
+
+[node name="StaticBody2D52" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1218.21, 478.306 )
+transform/rot = -210.526
+transform/scale = Vector2( 0.191845, -0.127758 )
+
+[node name="StaticBody2D53" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1259.84, 447.206 )
+transform/rot = -218.195
+transform/scale = Vector2( 0.173727, -0.114106 )
+
+[node name="StaticBody2D54" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -1299.6, 429.28 )
+transform/rot = -191.392
+transform/scale = Vector2( 0.173727, -0.131953 )
 
 
