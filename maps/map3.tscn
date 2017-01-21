@@ -44,7 +44,7 @@ margin/top = 232.0
 margin/right = 618.0
 margin/bottom = 255.0
 custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "Beware blue bubbles"
+text = "Be aware of blue bubbles!"
 
 [node name="appearLabel1" parent="Control" instance=ExtResource( 4 )]
 
@@ -53,7 +53,7 @@ margin/top = 389.0
 margin/right = 681.0
 margin/bottom = 438.0
 custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "They explode instantly and infect another bubbles themself"
+text = "They explode instatly, doubling the momentum given to them, which makes them quite deadly."
 appearDelay = 1
 
 [node name="appearLabel2" parent="Control" instance=ExtResource( 4 )]
@@ -63,7 +63,7 @@ margin/top = 430.0
 margin/right = 855.0
 margin/bottom = 453.0
 custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "But you always can replay level"
+text = "Try not to touch them as much as you can, because they can ruin your plans easily.\n"
 appearDelay = 3
 
 [connection signal="body_enter" from="chunk/bubble" to="chunk/bubble" method="_on_bubble_body_enter"]

@@ -41,7 +41,7 @@ margin/top = 37.0
 margin/right = 92.0
 margin/bottom = 60.0
 custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
-text = "Your target - more than 80% infected bubbles"
+text = "Your goal is to make more than 80% of bubbles infected"
 appearDelay = 3
 
 [node name="appearLabel3" parent="Node2D" instance=ExtResource( 1 )]
@@ -54,7 +54,7 @@ margin/top = -147.0
 margin/right = -19.0
 margin/bottom = -194.0
 custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
-text = "Your energy limited!"
+text = "Be aware, your energy is limited!"
 appearDelay = 3
 
 [node name="map" parent="." instance=ExtResource( 2 )]

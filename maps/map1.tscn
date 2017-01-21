@@ -452,6 +452,13 @@ z/z = -10
 texture = ExtResource( 5 )
 modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
 
+[node name="rock146" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1227.11, -54.5585 )
+z/z = -10
+texture = ExtResource( 5 )
+modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
+
 [node name="rock115" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1468.79, 161.224 )
@@ -496,6 +503,19 @@ transform/pos = Vector2( 642.864, -248.763 )
 transform/rot = -10.9259
 texture = ExtResource( 5 )
 
+[node name="rock150" type="Sprite" parent="."]
+
+transform/pos = Vector2( 306.243, -792.535 )
+transform/rot = -10.9259
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock149" type="Sprite" parent="."]
+
+transform/pos = Vector2( -621.623, -442.967 )
+transform/rot = -10.9259
+texture = ExtResource( 5 )
+
 [node name="rock123" type="Sprite" parent="."]
 
 transform/pos = Vector2( -202.565, 648.893 )
@@ -514,10 +534,57 @@ transform/pos = Vector2( -214.105, 109.436 )
 transform/rot = -29.2292
 texture = ExtResource( 5 )
 
+[node name="rock159" type="Sprite" parent="."]
+
+transform/pos = Vector2( 782.054, -740.453 )
+transform/rot = -29.2292
+transform/scale = Vector2( 0.627916, 0.689269 )
+texture = ExtResource( 5 )
+
+[node name="rock158" type="Sprite" parent="."]
+
+transform/pos = Vector2( -849.997, 434.928 )
+transform/rot = -29.2292
+transform/scale = Vector2( 0.693189, 0.555163 )
+texture = ExtResource( 5 )
+
+[node name="rock153" type="Sprite" parent="."]
+
+transform/pos = Vector2( 951.942, 1586.96 )
+transform/rot = -29.2292
+texture = ExtResource( 5 )
+
+[node name="rock136" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2506.37, 443.723 )
+transform/rot = -29.2292
+transform/scale = Vector2( 0.616957, 0.682306 )
+texture = ExtResource( 5 )
+
 [node name="rock126" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1519.38, 398.585 )
 transform/rot = 53.6787
+texture = ExtResource( 5 )
+
+[node name="rock156" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1519.38, 398.585 )
+transform/rot = 53.6787
+texture = ExtResource( 5 )
+
+[node name="rock155" type="Sprite" parent="."]
+
+transform/pos = Vector2( -1122.81, 275.263 )
+transform/rot = 53.6787
+transform/scale = Vector2( 0.606937, 0.668705 )
+texture = ExtResource( 5 )
+
+[node name="rock134" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2175.72, 326.749 )
+transform/rot = 70.0
+transform/scale = Vector2( 0.892883, 0.715917 )
 texture = ExtResource( 5 )
 
 [node name="rock127" type="Sprite" parent="."]
@@ -526,9 +593,47 @@ transform/pos = Vector2( 1480.54, -93.3995 )
 transform/rot = -73.685
 texture = ExtResource( 5 )
 
+[node name="rock147" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1480.54, -93.3995 )
+transform/rot = -73.685
+texture = ExtResource( 5 )
+
+[node name="rock148" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1480.54, -93.3995 )
+transform/rot = -73.685
+texture = ExtResource( 5 )
+
+[node name="rock157" type="Sprite" parent="."]
+
+transform/pos = Vector2( -875.001, 109.349 )
+transform/rot = -73.685
+transform/scale = Vector2( 0.736068, 0.721766 )
+texture = ExtResource( 5 )
+
+[node name="rock154" type="Sprite" parent="."]
+
+transform/pos = Vector2( -452.223, 1232.38 )
+transform/rot = -73.685
+texture = ExtResource( 5 )
+
+[node name="rock138" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2228.58, -375.683 )
+transform/rot = 80.0
+transform/scale = Vector2( 0.972457, 1.02692 )
+texture = ExtResource( 5 )
+
 [node name="rock128" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1394.23, 856.044 )
+transform/rot = -70.3559
+texture = ExtResource( 5 )
+
+[node name="rock137" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2026.3, 721.514 )
 transform/rot = -70.3559
 texture = ExtResource( 5 )
 
@@ -536,6 +641,59 @@ texture = ExtResource( 5 )
 
 transform/pos = Vector2( 744.349, 723.056 )
 transform/rot = -70.3559
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock140" type="Sprite" parent="."]
+
+transform/pos = Vector2( 744.349, 731.687 )
+transform/rot = -70.3559
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock141" type="Sprite" parent="."]
+
+transform/pos = Vector2( 51.0609, 1260.55 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock142" type="Sprite" parent="."]
+
+transform/pos = Vector2( -817.352, -87.6422 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock143" type="Sprite" parent="."]
+
+transform/pos = Vector2( 35.4813, -394.774 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock151" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1084.19, 1581.8 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock144" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1208.71, -593.875 )
+transform/rot = 50.0
+transform/scale = Vector2( 0.832646, 0.853336 )
 z/z = -100
 texture = ExtResource( 5 )
 modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
@@ -550,9 +708,27 @@ modulate = Color( 0.449219, 0.449219, 0.449219, 1 )
 
 [node name="rock133" type="Sprite" parent="."]
 
-transform/pos = Vector2( 671.625, 163.825 )
+transform/pos = Vector2( 675.52, 163.825 )
 transform/rot = -70.3559
 transform/scale = Vector2( 1.14244, 0.700825 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
+
+[node name="rock139" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1786.06, 642.787 )
+transform/rot = -70.3559
+transform/scale = Vector2( 0.99121, 0.58016 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
+
+[node name="rock145" type="Sprite" parent="."]
+
+transform/pos = Vector2( -423.259, 573.991 )
+transform/rot = -70.3559
+transform/scale = Vector2( 0.746467, 0.543461 )
 z/z = -100
 texture = ExtResource( 5 )
 modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
@@ -563,10 +739,23 @@ transform/pos = Vector2( 837.507, 912.147 )
 transform/rot = 55.15
 texture = ExtResource( 5 )
 
+[node name="rock135" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1946.63, 1114.98 )
+transform/rot = 55.15
+texture = ExtResource( 5 )
+
 [node name="rock130" type="Sprite" parent="."]
 
 transform/pos = Vector2( 216.053, 927.678 )
 transform/rot = -49.7998
+texture = ExtResource( 5 )
+
+[node name="rock152" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0.771461, 1540.69 )
+transform/rot = -49.7998
+transform/scale = Vector2( 0.844712, 0.785252 )
 texture = ExtResource( 5 )
 
 [node name="parallaxes" parent="." instance=ExtResource( 6 )]
