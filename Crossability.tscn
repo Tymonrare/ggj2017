@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D\n\nvar mouseHolded = false;\nvar startpos = Vector2(0,0);\nvar endpos = Vector2(0,0);\nfunc _ready():\n\tset_process_input(true)\n\tset_process(true);\n\t\nfunc _process(delta):\n\t\n\tif(Input.is_mouse_button_pressed(BUTTON_LEFT)):\n\t\tmouseHolded = true;\n\telse:\n\t\tmouseHolded = false;\n\nfunc _input( ev ):\n\tif (ev.type == InputEvent.MOUSE_BUTTON):\n\t\tif(ev.button_index == BUTTON_LEFT):\n\t\t\tstartpos = ev.global_pos;\n\tif(ev.type == InputEvent.MOUSE_MOTION && mouseHolded):\n\t\tendpos = ev.global_pos;\n\t\tprint(\'startpos\',startpos);\n\t\tprint(\'endpos\',endpos);\n\t\n\tpass # replace with function body\n\n\nfunc _on_Node_draw():\n\tif(Input.is_mouse_button_pressed(BUTTON_LEFT)):\n\t\tmouseHolded = true;\n\t\tdraw_line(startpos, endpos, Color(1,1,1,1));\n\telse:\n\t\tmouseHolded = false;\n\t\n\tpass # replace with function body\n"
+
+[node name="Node" type="Node2D"]
+
+script/script = SubResource( 1 )
+
+[connection signal="draw" from="." to="." method="_on_Node_draw"]
+
+
