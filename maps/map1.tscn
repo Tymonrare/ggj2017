@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://objs/rock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objs/rock2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://image/back/backparticle2.png" type="Texture" id=3]
 [ext_resource path="res://image/back/back2.png" type="Texture" id=4]
 [ext_resource path="res://image/rock1.png" type="Texture" id=5]
+[ext_resource path="res://maps/parallaxes.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ColorRamp" id=1]
 
@@ -567,5 +568,7 @@ texture = ExtResource( 5 )
 transform/pos = Vector2( 216.053, 927.678 )
 transform/rot = -49.7998
 texture = ExtResource( 5 )
+
+[node name="parallaxes" parent="." instance=ExtResource( 6 )]
 
 
