@@ -10,13 +10,13 @@
 
 script/source = "extends Camera2D\n\nvar mouseHolded = false;\n\nfunc _ready():\n\tset_process_input(true)\n\tset_process(true);\n\t\nfunc _process(delta):\n\tif(Input.is_mouse_button_pressed(BUTTON_RIGHT)):\n\t\tmouseHolded = true;\n\telse:\n\t\tmouseHolded = false;\n\nfunc _input( ev ):\n\tif (ev.type == InputEvent.MOUSE_BUTTON):\n\t\tif(ev.button_index == BUTTON_WHEEL_UP && get_zoom().x > 0.5):\n\t\t\tset_zoom(get_zoom()-Vector2(0.3,0.3));\n\t\telif(ev.button_index == BUTTON_WHEEL_DOWN):\n\t\t\tset_zoom(get_zoom()+Vector2(0.3,0.3));\n\tif(ev.type == InputEvent.MOUSE_MOTION && mouseHolded):\n\t\tset_pos(get_pos()-ev.relative_pos*get_scale().x);\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 
 script/source = "\n\nfunc _on_restartButton_pressed():\n\tget_node(\"../store\").set_hidden(false);\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 
-script/source = "extends Node\n\nvar savedict = {\n        money=0,\n        explodeForce=200,\n        dumping=2, #Vector2 is not supported by json\n        infectPower=300,\n\t\tmaxEnergy = 50,\n}\n\nfunc _enter_tree():\n\tGlobals.set(\"game_saver\", self);\n\nfunc _ready():\n\tloadData();\n\tsavedict.money*=200;\n\tprint(savedict.money);\n\nfunc loadData():\n\tvar savegame = File.new()\n\tif !savegame.file_exists(\"user://savegame.save\"):\n\t\treturn #Error!  We don\'t have a save to load\n\t\n\tvar currentline = {} # dict.parse_json() requires a declared dict.\n\tsavegame.open(\"user://savegame.save\", File.READ)\n\twhile (!savegame.eof_reached()):\n\t\tcurrentline.parse_json(savegame.get_line())\n\t\t\n\t\tsavedict.money = currentline[\"money\"];\n\t\tsavedict.explodeForce = currentline[\"explodeForce\"];\n\t\tsavedict.dumping = currentline[\"dumping\"];\n\t\tsavedict.infectPower = currentline[\"infectPower\"];\n\t\tsavedict.maxEnergy = currentline[\"maxEnergy\"];\n\tpass;\n\nfunc saveData():\n\tprint(savedict);\n\tvar savegame = File.new();\n\tsavegame.open(\"user://savegame.save\", File.WRITE);\n\tsavegame.store_line(savedict.to_json())\n\tsavegame.close();\n\tpass;"
+script/source = "extends Node\n\nvar savedict = {\n        money=0,\n        explodeForce=100,\n        dumping=3, #Vector2 is not supported by json\n        infectPower=200,\n\t\tmaxEnergy = 50,\n}\n\nfunc _enter_tree():\n\tvar dir = Directory.new(); dir.remove(\"user://savegame.save\");\n\tGlobals.set(\"game_saver\", self);\n\tloadData();\n\n\nfunc loadData():\n\tvar savegame = File.new()\n\tif !savegame.file_exists(\"user://savegame.save\"):\n\t\treturn #Error!  We don\'t have a save to load\n\t\n\tvar currentline = {} # dict.parse_json() requires a declared dict.\n\tsavegame.open(\"user://savegame.save\", File.READ)\n\twhile (!savegame.eof_reached()):\n\t\tcurrentline.parse_json(savegame.get_line())\n\t\t\n\t\tsavedict.money = currentline[\"money\"];\n\t\tsavedict.explodeForce = currentline[\"explodeForce\"];\n\t\tsavedict.dumping = currentline[\"dumping\"];\n\t\tsavedict.infectPower = currentline[\"infectPower\"];\n\t\tsavedict.maxEnergy = currentline[\"maxEnergy\"];\n\tpass;\n\nfunc saveData():\n\tprint(savedict);\n\tvar savegame = File.new();\n\tsavegame.open(\"user://savegame.save\", File.WRITE);\n\tsavegame.store_line(savedict.to_json())\n\tsavegame.close();\n\tpass;"
 
 [node name="Control" type="Control"]
 
@@ -119,7 +119,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "shop"
 flat = false
-script/script = SubResource( 3 )
+script/script = SubResource( 2 )
 
 [node name="store" parent="CanvasLayer" instance=ExtResource( 4 )]
 
@@ -132,7 +132,7 @@ transform/scale = Vector2( 3.51738, 3.51738 )
 
 [node name="saver" type="Node" parent="."]
 
-script/script = SubResource( 2 )
+script/script = SubResource( 3 )
 
 [connection signal="body_enter" from="chunk1/bubble" to="chunk1/bubble" method="_on_bubble_body_enter"]
 

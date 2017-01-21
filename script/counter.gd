@@ -14,13 +14,15 @@ func add():
 func addInfected():
 	infected += 1;
 	combo += 1;
+	var saver = Globals.get("game_saver");
+	saver.savedict.money += combo;
 	get_node("infected").set_text("infected bubbles: %d" % infected);
 	get_node("combo").set_text("combo: %dx" % combo);
 	updatePercent();
 
 func discardCombo():
 	var saver = Globals.get("game_saver");
-	saver.savedict.money += combo;
+	saver.savedict.money += combo*5;
 	combo = 0;
 	get_node("combo").set_text("combo: %dx" % combo);
 	pass;

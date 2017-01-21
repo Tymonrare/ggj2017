@@ -1,22 +1,22 @@
 [gd_scene load_steps=7 format=1]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=7]
 
-script/source = "extends Label\n\nfunc _ready():\n\tupdate();\n\t\nfunc update():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text(\"money: %d\" % gs.money);"
+script/source = "extends Label\n\nfunc update():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text(\"money: %d\" % gs.money);\n\nfunc _on_moneyShow_visibility_changed():\n\tupdate();\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=8]
 
 script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 50;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 25;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.3;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 50;\n\tset_text((\"add infect power\\n current: %d\" % gs.infectPower) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
 
@@ -49,7 +49,7 @@ text = "money:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 3 )
+script/script = SubResource( 7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
@@ -65,7 +65,6 @@ alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -92,7 +91,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "add explodion power"
 flat = false
-script/script = SubResource( 1 )
+script/script = SubResource( 8 )
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
 
@@ -110,7 +109,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "increase max energy"
 flat = false
-script/script = SubResource( 4 )
+script/script = SubResource( 3 )
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
 
@@ -141,7 +140,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "decrease dumping"
 flat = false
-script/script = SubResource( 5 )
+script/script = SubResource( 4 )
 
 [node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer1"]
 
@@ -159,7 +158,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "add infect power"
 flat = false
-script/script = SubResource( 2 )
+script/script = SubResource( 5 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 
@@ -177,6 +176,8 @@ shortcut = null
 text = "restart\?"
 flat = false
 script/script = SubResource( 6 )
+
+[connection signal="visibility_changed" from="moneyShow" to="moneyShow" method="_on_moneyShow_visibility_changed"]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="VBoxContainer/HBoxContainer/Button" method="_on_Button_pressed"]
 
