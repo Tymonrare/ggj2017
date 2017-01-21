@@ -13,19 +13,19 @@ loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect/rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 150.0, 0.0 ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.6 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 150.0, -3.0, 0.0 ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect/scale")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 3, 3 ), Vector2( 1, 1 ) ] }
+tracks/1/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 3, 3 ), Vector2( 1.5, 1.5 ) ] }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:visibility/opacity")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 2, 3, 5 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 1.0, 0.0 ] }
+tracks/2/keys = { "times":FloatArray( 0, 2, 4, 5 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 1.0, 0.0 ] }
 
 [node name="appearLabel" type="Label"]
 
@@ -41,6 +41,10 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 23.0
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 5
+custom_constants/shadow_offset_y = 3
 text = "text"
 percent_visible = 1.0
 lines_skipped = 0

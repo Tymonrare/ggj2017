@@ -8,19 +8,19 @@ script/source = "extends Label\n\nfunc update():\n\tvar gs = Globals.get(\"game_
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 5;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 5;\n\tset_text((\"add explodion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 100);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 100): return;\n\tgs.money -= 100;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 10;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 100);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % 100);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 100): return;\n\tgs.money -= 100;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 10;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % 100);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=4]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.1;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.1;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=5]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 20;\n\tset_text((\"add infect power\\n current: %d\" % gs.infectPower) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % 50);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 20;\n\tset_text((\"add infect power. Current: %d\" % gs.infectPower) + \". Cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=6]
 
@@ -45,10 +45,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -1165.0
-margin/top = 4.0
-margin/right = -1233.0
-margin/bottom = 27.0
+margin/left = -1101.0
+margin/top = 13.0
+margin/right = -1169.0
+margin/bottom = 36.0
 custom_fonts/font = ExtResource( 1 )
 text = "money:"
 percent_visible = 1.0

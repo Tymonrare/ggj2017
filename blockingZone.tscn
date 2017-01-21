@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0.00416667, 0.825, 1 )
+colors = ColorArray( 1, 0, 0, 1, 1, 1, 1, 0.275, 1, 0, 0, 0 )
+
+[node name="zone" type="Panel"]
+
+visibility/self_opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -62.0
+margin/top = -44.0
+margin/right = 1497.0
+margin/bottom = 1534.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 784.121, 706.211 )
+config/amount = 200
+config/lifetime = 5.0
+config/half_extents = Vector2( 700, 700 )
+params/direction = 360.0
+params/spread = 360.0
+params/linear_velocity = 30.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 50.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 10.0
+randomness/linear_velocity = 1.0
+randomness/spin_velocity = 1.0
+color/color = Color( 1, 0, 0, 1 )
+color/color_ramp = SubResource( 1 )
+
+

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://script/counter.gd" type="Script" id=1]
 [ext_resource path="res://font/titilium-bold.fnt" type="BitmapFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button\n\nfunc _ready():\n\tset_process(true);\n\t\nfunc _process(delta):\n\tif(Input.is_action_pressed(\"ui_accept\")):\n\t\tset_hidden(false);\n\nfunc _on_nextlevelButton_pressed():\n\tGlobals.get(\"map_control\").next_map();\n"
 
 [node name="bubbles_counter" type="Control"]
 
@@ -78,5 +82,25 @@ text = "combo: 0x"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="nextlevelButton" type="Button" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 72.0
+margin/top = 678.0
+margin/right = 170.0
+margin/bottom = 698.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "next level"
+flat = false
+script/script = SubResource( 1 )
+
+[connection signal="pressed" from="nextlevelButton" to="nextlevelButton" method="_on_nextlevelButton_pressed"]
 
 

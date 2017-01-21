@@ -1,35 +1,64 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://maps/map1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://chunk.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bubble.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objs/AppearLabel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objs/rock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objs/AppearLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://blockingZone.tscn" type="PackedScene" id=6]
 
 [node name="map" type="Node2D"]
 
 [node name="map" parent="." instance=ExtResource( 1 )]
 
 transform/scale = Vector2( 2, 2 )
-z/z = -1
+z/z = -10
 
 [node name="chunk" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 124.297, 114.682 )
-size = 7
+transform/pos = Vector2( 197.705, 279.115 )
+size = 3
+
+[node name="chunk2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 840.648, 265.138 )
+size = 3
+
+[node name="chunk3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 234.977, 852.173 )
+size = 3
+
+[node name="chunk4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 514.518, 856.832 )
+size = 3
 
 [node name="chunk1" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1399.86, 91.8018 )
 size = 7
 
-[node name="bubble" parent="." instance=ExtResource( 3 )]
+[node name="rock" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2122.19, 229.243 )
-immunitet = true
+transform/pos = Vector2( 1095.44, 1397.48 )
 
-[node name="bubble1" parent="." instance=ExtResource( 3 )]
+[node name="rock1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1983.44, 1171.11 )
+transform/pos = Vector2( 1128.18, 1144.74 )
+transform/rot = 48.5279
+transform/scale = Vector2( 0.605093, 0.605093 )
+
+[node name="rock2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1171.45, 959.285 )
+transform/rot = 84.9918
+transform/scale = Vector2( 0.605093, 0.605093 )
+z/z = -1
+
+[node name="bubble" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2357.94, 746.495 )
 immunitet = true
 
 [node name="Control" type="Node2D" parent="."]
@@ -37,34 +66,17 @@ immunitet = true
 transform/scale = Vector2( 3, 3 )
 z/z = 10
 
-[node name="appearLabel" parent="Control" instance=ExtResource( 4 )]
+[node name="appearLabel2" parent="Control" instance=ExtResource( 5 )]
 
-margin/left = 426.0
-margin/top = 232.0
-margin/right = 618.0
-margin/bottom = 255.0
+margin/left = 198.0
+margin/top = 202.0
+margin/right = 441.0
+margin/bottom = 225.0
 custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "Beware blue bubbles"
-
-[node name="appearLabel1" parent="Control" instance=ExtResource( 4 )]
-
-margin/left = 129.0
-margin/top = 389.0
-margin/right = 681.0
-margin/bottom = 438.0
-custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "They explode instantly and infect another bubbles themself"
+text = "You can\'t interact with bubbles in storm zones"
 appearDelay = 1
 
-[node name="appearLabel2" parent="Control" instance=ExtResource( 4 )]
-
-margin/left = 612.0
-margin/top = 430.0
-margin/right = 855.0
-margin/bottom = 453.0
-custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "But you always can replay level"
-appearDelay = 3
+[node name="zone" parent="." instance=ExtResource( 6 )]
 
 [connection signal="body_enter" from="chunk/bubble" to="chunk/bubble" method="_on_bubble_body_enter"]
 
@@ -84,85 +96,59 @@ appearDelay = 3
 
 [connection signal="body_enter" from="chunk/bubble 9" to="chunk/bubble 9" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 10" to="chunk/bubble 10" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble" to="chunk2/bubble" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 11" to="chunk/bubble 11" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 2" to="chunk2/bubble 2" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 12" to="chunk/bubble 12" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 3" to="chunk2/bubble 3" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 13" to="chunk/bubble 13" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 4" to="chunk2/bubble 4" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 14" to="chunk/bubble 14" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 5" to="chunk2/bubble 5" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 15" to="chunk/bubble 15" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 6" to="chunk2/bubble 6" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 16" to="chunk/bubble 16" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 7" to="chunk2/bubble 7" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 17" to="chunk/bubble 17" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 8" to="chunk2/bubble 8" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 18" to="chunk/bubble 18" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk2/bubble 9" to="chunk2/bubble 9" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 19" to="chunk/bubble 19" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble" to="chunk3/bubble" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 20" to="chunk/bubble 20" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 2" to="chunk3/bubble 2" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 21" to="chunk/bubble 21" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 3" to="chunk3/bubble 3" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 22" to="chunk/bubble 22" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 4" to="chunk3/bubble 4" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 23" to="chunk/bubble 23" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 5" to="chunk3/bubble 5" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 24" to="chunk/bubble 24" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 6" to="chunk3/bubble 6" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 25" to="chunk/bubble 25" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 7" to="chunk3/bubble 7" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 26" to="chunk/bubble 26" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 8" to="chunk3/bubble 8" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 27" to="chunk/bubble 27" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk3/bubble 9" to="chunk3/bubble 9" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 28" to="chunk/bubble 28" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble" to="chunk4/bubble" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 29" to="chunk/bubble 29" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 2" to="chunk4/bubble 2" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 30" to="chunk/bubble 30" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 3" to="chunk4/bubble 3" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 31" to="chunk/bubble 31" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 4" to="chunk4/bubble 4" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 32" to="chunk/bubble 32" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 5" to="chunk4/bubble 5" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 33" to="chunk/bubble 33" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 6" to="chunk4/bubble 6" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 34" to="chunk/bubble 34" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 7" to="chunk4/bubble 7" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 35" to="chunk/bubble 35" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 8" to="chunk4/bubble 8" method="_on_bubble_body_enter"]
 
-[connection signal="body_enter" from="chunk/bubble 36" to="chunk/bubble 36" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 37" to="chunk/bubble 37" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 38" to="chunk/bubble 38" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 39" to="chunk/bubble 39" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 40" to="chunk/bubble 40" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 41" to="chunk/bubble 41" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 42" to="chunk/bubble 42" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 43" to="chunk/bubble 43" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 44" to="chunk/bubble 44" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 45" to="chunk/bubble 45" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 46" to="chunk/bubble 46" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 47" to="chunk/bubble 47" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 48" to="chunk/bubble 48" method="_on_bubble_body_enter"]
-
-[connection signal="body_enter" from="chunk/bubble 49" to="chunk/bubble 49" method="_on_bubble_body_enter"]
+[connection signal="body_enter" from="chunk4/bubble 9" to="chunk4/bubble 9" method="_on_bubble_body_enter"]
 
 [connection signal="body_enter" from="chunk1/bubble" to="chunk1/bubble" method="_on_bubble_body_enter"]
 
