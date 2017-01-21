@@ -1,0 +1,191 @@
+[gd_scene load_steps=7 format=1]
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Label\n\nfunc _ready():\n\tupdate();\n\t\nfunc update():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text(\"money: %d\" % gs.money);"
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 50;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 25;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.3;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 50;\n\tset_text((\"add infect power\\n current: %d\" % gs.infectPower) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "\n\nfunc _on_Button_pressed():\n\tGlobals.get(\"game_saver\").saveData();\n\tget_tree().reload_current_scene();\n\tpass # replace with function body\n"
+
+[node name="store" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="moneyShow" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+text = "money:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 120.0
+margin/top = 289.0
+margin/right = 875.0
+margin/bottom = 513.0
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 755.0
+margin/bottom = 20.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+
+rect/min_size = Vector2( 100, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 231.0
+margin/top = 0.0
+margin/right = 376.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "add explodion power"
+flat = false
+script/script = SubResource( 1 )
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+
+rect/min_size = Vector2( 100, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 0.0
+margin/right = 524.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "increase max energy"
+flat = false
+script/script = SubResource( 4 )
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 755.0
+margin/bottom = 44.0
+alignment = 1
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer1"]
+
+rect/min_size = Vector2( 100, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 251.0
+margin/top = 0.0
+margin/right = 381.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "decrease dumping"
+flat = false
+script/script = SubResource( 5 )
+
+[node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer1"]
+
+rect/min_size = Vector2( 100, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 385.0
+margin/top = 0.0
+margin/right = 503.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "add infect power"
+flat = false
+script/script = SubResource( 2 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 48.0
+margin/right = 755.0
+margin/bottom = 68.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "restart\?"
+flat = false
+script/script = SubResource( 6 )
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="VBoxContainer/HBoxContainer/Button" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="VBoxContainer/HBoxContainer/Button2" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer1/Button3" to="VBoxContainer/HBoxContainer1/Button3" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer1/Button1" to="VBoxContainer/HBoxContainer1/Button1" method="_on_Button1_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_Button_pressed"]
+
+

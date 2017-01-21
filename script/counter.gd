@@ -19,6 +19,8 @@ func addInfected():
 	updatePercent();
 
 func discardCombo():
+	var saver = Globals.get("game_saver");
+	saver.savedict.money += combo;
 	combo = 0;
 	get_node("combo").set_text("combo: %dx" % combo);
 	pass;
