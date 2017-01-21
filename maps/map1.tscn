@@ -1,0 +1,589 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://objs/rock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objs/rock2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://image/back/backparticle2.png" type="Texture" id=3]
+[ext_resource path="res://image/back/back2.png" type="Texture" id=4]
+[ext_resource path="res://image/rock1.png" type="Texture" id=5]
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="map" type="Node2D"]
+
+transform/pos = Vector2( 86.3121, 86.3121 )
+transform/scale = Vector2( 3.69725, 3.69725 )
+
+[node name="rock 2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 513.678, -87.8827 )
+transform/rot = -37.2651
+transform/scale = Vector2( 0.508459, 0.278374 )
+
+[node name="rock18" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 370.384, 744.656 )
+transform/rot = -93.0138
+transform/scale = Vector2( -0.366864, 0.495284 )
+
+[node name="rock2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 358.936, -110.297 )
+transform/scale = Vector2( 0.21666, 0.175397 )
+
+[node name="rock3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 328.423, -51.9335 )
+transform/rot = 78.937
+transform/scale = Vector2( 0.343205, 0.192392 )
+
+[node name="rock19" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -61.8643, 441.606 )
+transform/rot = 191.873
+transform/scale = Vector2( 0.407014, 0.499012 )
+
+[node name="rock4" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 432.881, -77.3921 )
+transform/rot = 78.937
+transform/scale = Vector2( 0.199902, 0.192392 )
+
+[node name="rock5 2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -17.7943, -54.274 )
+transform/rot = 6.59762
+transform/scale = Vector2( 0.199902, 0.192392 )
+
+[node name="rock510" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -23.6256, 718.99 )
+transform/rot = -40.1642
+transform/scale = Vector2( 0.279825, 0.182301 )
+
+[node name="rock512" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -95.9779, 278.847 )
+transform/rot = -57.1839
+transform/scale = Vector2( 0.279825, 0.182301 )
+
+[node name="rock511" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -35.6787, 663.063 )
+transform/rot = -102.331
+transform/scale = Vector2( 0.117517, 0.136564 )
+
+[node name="rock53" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1284.48, -24.3426 )
+transform/rot = -62.5694
+transform/scale = Vector2( 0.542381, 0.233454 )
+
+[node name="rock58" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1337.47, 115.434 )
+transform/rot = -62.5694
+transform/scale = Vector2( 0.239734, 0.247895 )
+
+[node name="rock62" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1336.1, 300.03 )
+transform/rot = 172.381
+transform/scale = Vector2( 0.298879, 0.495515 )
+
+[node name="rock66" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 607.91, 722.769 )
+transform/rot = 109.64
+transform/scale = Vector2( 0.175647, 0.376127 )
+
+[node name="rock59" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1324.59, 207.099 )
+transform/rot = 18.3538
+transform/scale = Vector2( 0.193789, 0.151444 )
+
+[node name="rock63" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1316.33, 426.248 )
+transform/rot = 56.064
+transform/scale = Vector2( 0.14432, 0.12604 )
+
+[node name="rock67" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1307.09, 582.797 )
+transform/rot = 56.064
+transform/scale = Vector2( 0.174878, -0.176297 )
+
+[node name="rock64" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1318.31, 483.412 )
+transform/rot = 122.823
+transform/scale = Vector2( 0.183703, 0.257157 )
+
+[node name="rock55" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 774.994, -96.0696 )
+transform/rot = 147.365
+transform/scale = Vector2( 0.199902, 0.192392 )
+
+[node name="rock65" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 486.466, 744.186 )
+transform/rot = -2.43377
+transform/scale = Vector2( 0.195617, 0.170471 )
+
+[node name="rock56" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 836.447, -95.6638 )
+transform/rot = 187.796
+transform/scale = Vector2( 0.187731, 0.120302 )
+
+[node name="rock60" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 190.32, 758.943 )
+transform/rot = -172.204
+transform/scale = Vector2( 0.187731, 0.120302 )
+
+[node name="rock61" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 265.851, 759.98 )
+transform/rot = 170.629
+transform/scale = Vector2( 0.282467, 0.168949 )
+
+[node name="rock57" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1214.59, -89.3463 )
+transform/rot = 315.296
+transform/scale = Vector2( 0.187731, 0.120302 )
+
+[node name="rock 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -26.4948, 583.59 )
+transform/rot = 76.3824
+transform/scale = Vector2( -0.344536, 0.265464 )
+
+[node name="rock16" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -95.0959, 211.538 )
+transform/rot = 91.1855
+transform/scale = Vector2( -0.246851, 0.206657 )
+
+[node name="rock5 3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 239.859, -96.6976 )
+transform/rot = -43.4228
+transform/scale = Vector2( 0.302095, 0.307411 )
+
+[node name="rock54" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 630.626, -96.2029 )
+transform/rot = -94.7759
+transform/scale = Vector2( 0.199902, 0.224788 )
+
+[node name="rock8" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 88.7181, -100.223 )
+transform/rot = -43.4228
+transform/scale = Vector2( 0.199902, 0.192392 )
+
+[node name="rock9" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -106.222, 69.4468 )
+transform/rot = 6.59762
+transform/scale = Vector2( 0.199902, 0.192392 )
+
+[node name="rock17" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 110.595, 756.987 )
+transform/rot = 170.999
+transform/scale = Vector2( 0.382902, 0.153916 )
+
+[node name="rock28" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1018.43, 683.831 )
+transform/rot = 69.9364
+transform/scale = Vector2( 0.382902, 0.498251 )
+
+[node name="rock20" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1171.36, 712.788 )
+transform/rot = 343.958
+transform/scale = Vector2( 0.382902, 0.153916 )
+
+[node name="rock25" parent="." instance=ExtResource( 1 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 1323.22, 649.187 )
+transform/rot = 241.163
+transform/scale = Vector2( 0.18918, 0.174973 )
+
+[node name="rock" parent="rock25" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1401.04, 1998.24 )
+transform/rot = -77.7543
+
+[node name="rock2" parent="rock25" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1829.77, 2759.61 )
+transform/rot = 92.9054
+transform/scale = Vector2( 0.595177, 0.632902 )
+
+[node name="rock4" parent="rock25" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1557.61, 2154.85 )
+transform/rot = -64.516
+transform/scale = Vector2( 0.518128, 0.406071 )
+
+[node name="rock3" parent="rock25" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1684.49, 2554.22 )
+transform/rot = 24.7712
+transform/scale = Vector2( 0.705492, 1.62339 )
+
+[node name="rock26" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1343.25, 612.932 )
+transform/rot = 241.163
+transform/scale = Vector2( 0.101092, 0.0953894 )
+
+[node name="rock29" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 684.805, 704.156 )
+transform/rot = 241.163
+transform/scale = Vector2( 0.101092, 0.115659 )
+
+[node name="rock30" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 961.387, 709.758 )
+transform/rot = 257.417
+transform/scale = Vector2( 0.105431, -0.1344 )
+
+[node name="rock31" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 712.729, 720.374 )
+transform/rot = 257.417
+transform/scale = Vector2( 0.061812, -0.0697941 )
+
+[node name="rock32" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 922.768, 719.603 )
+transform/rot = 257.417
+transform/scale = Vector2( 0.0623166, -0.116442 )
+
+[node name="rock27" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1305.44, 701.104 )
+transform/rot = 241.163
+transform/scale = Vector2( -0.0638399, 0.0416499 )
+
+[node name="rock10" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -82.2345, 9.31652 )
+transform/rot = 28.2512
+transform/scale = Vector2( 0.293717, 0.163759 )
+
+[node name="rock" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 174.653, -100.829 )
+transform/rot = -81.6824
+transform/scale = Vector2( 0.174318, 0.270054 )
+
+[node name="rock1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -54.3488, -8.30379 )
+transform/rot = -25.5465
+transform/scale = Vector2( 0.382905, 0.273987 )
+
+[node name="rock11" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 899.401, -79.2693 )
+transform/scale = Vector2( 0.487674, 0.379869 )
+
+[node name="rock22" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1309.63, 510.384 )
+transform/rot = 295.141
+transform/scale = Vector2( 0.110205, -0.114977 )
+
+[node name="rock23" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1302.89, 537.484 )
+transform/rot = 295.141
+transform/scale = Vector2( 0.0858117, -0.131018 )
+
+[node name="rock13" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1159.61, -91.1081 )
+transform/scale = Vector2( 0.186519, 0.185769 )
+
+[node name="rock14" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1039.58, -97.4256 )
+transform/rot = 149.521
+transform/scale = Vector2( 0.186519, 0.185769 )
+
+[node name="rock21" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1124.09, 718.404 )
+transform/rot = 149.521
+transform/scale = Vector2( 0.159087, 0.123279 )
+
+[node name="rock24" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1277.48, 727.069 )
+transform/rot = 329.35
+transform/scale = Vector2( -0.164559, 0.194967 )
+
+[node name="rock15" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1073.81, -108.859 )
+transform/rot = 280.956
+transform/scale = Vector2( 0.186519, 0.403988 )
+
+[node name="rock5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 32.6687, -99.979 )
+transform/rot = -87.3271
+transform/scale = Vector2( 0.197573, 0.22372 )
+
+[node name="rock6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 152.29, -104.044 )
+transform/rot = -150.571
+transform/scale = Vector2( 0.185409, 0.184294 )
+
+[node name="rock12" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -79.6778, 121.863 )
+transform/rot = -150.571
+transform/scale = Vector2( 0.378881, 0.409015 )
+
+[node name="rock7" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 678.309, -112.554 )
+transform/scale = Vector2( 0.238085, 0.248797 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 636.752, 273.071 )
+transform/rot = 31.2899
+config/amount = 32
+config/lifetime = 2.0
+config/preprocess = 0.1
+config/half_extents = Vector2( 1000, 1000 )
+config/texture = ExtResource( 3 )
+params/direction = 10.0
+params/spread = 10.0
+params/linear_velocity = 10.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.1
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 10.0
+params/tangential_accel = 10.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.5
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/radial_accel = 1.0
+randomness/tangential_accel = 1.0
+color/color_ramp = SubResource( 1 )
+
+[node name="back2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 7.28825, -134.809 )
+transform/scale = Vector2( 1.27321, 1.27321 )
+z/z = -100
+texture = ExtResource( 4 )
+
+[node name="back3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 164.909, 296.709 )
+transform/scale = Vector2( 1.27321, 1.27321 )
+z/z = -100
+texture = ExtResource( 4 )
+
+[node name="back4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 920.438, 393.025 )
+transform/rot = 61.2975
+transform/scale = Vector2( 1.6307, 1.60433 )
+z/z = -100
+texture = ExtResource( 4 )
+
+[node name="rock1 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( -19.4669, -201.805 )
+texture = ExtResource( 5 )
+
+[node name="rock110" type="Sprite" parent="."]
+
+transform/pos = Vector2( 288.256, -277.943 )
+texture = ExtResource( 5 )
+
+[node name="rock111" type="Sprite" parent="."]
+
+transform/pos = Vector2( 551.565, -300.15 )
+texture = ExtResource( 5 )
+
+[node name="rock112" type="Sprite" parent="."]
+
+transform/pos = Vector2( 814.874, -268.426 )
+texture = ExtResource( 5 )
+
+[node name="rock113" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1119.42, -290.633 )
+texture = ExtResource( 5 )
+
+[node name="rock114" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1227.11, -54.5585 )
+z/z = -10
+texture = ExtResource( 5 )
+modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
+
+[node name="rock115" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1468.79, 161.224 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock116" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1486.05, 605.736 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock117" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1209.85, 925.094 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock118" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1015.65, 851.728 )
+transform/rot = 101.667
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock119" type="Sprite" parent="."]
+
+transform/pos = Vector2( 679.025, 894.885 )
+transform/rot = 24.3531
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock120" type="Sprite" parent="."]
+
+transform/pos = Vector2( 407.139, 912.147 )
+transform/rot = 16.0389
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock121" type="Sprite" parent="."]
+
+transform/pos = Vector2( -15.7948, 877.622 )
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock122" type="Sprite" parent="."]
+
+transform/pos = Vector2( 642.864, -248.763 )
+transform/rot = -10.9259
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock123" type="Sprite" parent="."]
+
+transform/pos = Vector2( -202.565, 648.893 )
+transform/rot = -38.3561
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock124" type="Sprite" parent="."]
+
+transform/pos = Vector2( -228.459, 385.638 )
+transform/rot = 51.1565
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock125" type="Sprite" parent="."]
+
+transform/pos = Vector2( -214.105, 109.436 )
+transform/rot = -29.2292
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock126" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1519.38, 398.585 )
+transform/rot = 53.6787
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock127" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1480.54, -93.3995 )
+transform/rot = -73.685
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock128" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1394.23, 856.044 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock131" type="Sprite" parent="."]
+
+transform/pos = Vector2( 744.349, 723.056 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
+
+[node name="rock132" type="Sprite" parent="."]
+
+transform/pos = Vector2( -12.6761, 674.786 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1, 1 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.449219, 0.449219, 0.449219, 1 )
+
+[node name="rock133" type="Sprite" parent="."]
+
+transform/pos = Vector2( 671.625, 163.825 )
+transform/rot = -70.3559
+transform/scale = Vector2( 1.14244, 0.700825 )
+z/z = -100
+texture = ExtResource( 5 )
+modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
+
+[node name="rock129" type="Sprite" parent="."]
+
+transform/pos = Vector2( 837.507, 912.147 )
+transform/rot = 55.15
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="rock130" type="Sprite" parent="."]
+
+transform/pos = Vector2( 216.053, 927.678 )
+transform/rot = -49.7998
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+

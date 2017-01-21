@@ -1,0 +1,239 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://maps/map1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://chunk.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bubble.tscn" type="PackedScene" id=3]
+
+[node name="map" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource( 1 )]
+
+transform/scale = Vector2( 2, 2 )
+
+[node name="chunk" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 124.297, 114.682 )
+size = 7
+
+[node name="chunk1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1399.86, 91.8018 )
+size = 7
+
+[node name="bubble" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1840.47, 485.733 )
+immunitet = true
+
+[node name="bubble1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1739.56, 998.713 )
+immunitet = true
+
+[node name="bubble2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2160.03, 830.523 )
+immunitet = true
+
+[node name="bubble3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2294.59, 237.653 )
+immunitet = true
+
+[connection signal="body_enter" from="chunk/bubble" to="chunk/bubble" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 2" to="chunk/bubble 2" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 3" to="chunk/bubble 3" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 4" to="chunk/bubble 4" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 5" to="chunk/bubble 5" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 6" to="chunk/bubble 6" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 7" to="chunk/bubble 7" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 8" to="chunk/bubble 8" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 9" to="chunk/bubble 9" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 10" to="chunk/bubble 10" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 11" to="chunk/bubble 11" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 12" to="chunk/bubble 12" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 13" to="chunk/bubble 13" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 14" to="chunk/bubble 14" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 15" to="chunk/bubble 15" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 16" to="chunk/bubble 16" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 17" to="chunk/bubble 17" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 18" to="chunk/bubble 18" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 19" to="chunk/bubble 19" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 20" to="chunk/bubble 20" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 21" to="chunk/bubble 21" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 22" to="chunk/bubble 22" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 23" to="chunk/bubble 23" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 24" to="chunk/bubble 24" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 25" to="chunk/bubble 25" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 26" to="chunk/bubble 26" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 27" to="chunk/bubble 27" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 28" to="chunk/bubble 28" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 29" to="chunk/bubble 29" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 30" to="chunk/bubble 30" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 31" to="chunk/bubble 31" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 32" to="chunk/bubble 32" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 33" to="chunk/bubble 33" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 34" to="chunk/bubble 34" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 35" to="chunk/bubble 35" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 36" to="chunk/bubble 36" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 37" to="chunk/bubble 37" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 38" to="chunk/bubble 38" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 39" to="chunk/bubble 39" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 40" to="chunk/bubble 40" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 41" to="chunk/bubble 41" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 42" to="chunk/bubble 42" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 43" to="chunk/bubble 43" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 44" to="chunk/bubble 44" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 45" to="chunk/bubble 45" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 46" to="chunk/bubble 46" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 47" to="chunk/bubble 47" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 48" to="chunk/bubble 48" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk/bubble 49" to="chunk/bubble 49" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble" to="chunk1/bubble" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 2" to="chunk1/bubble 2" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 3" to="chunk1/bubble 3" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 4" to="chunk1/bubble 4" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 5" to="chunk1/bubble 5" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 6" to="chunk1/bubble 6" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 7" to="chunk1/bubble 7" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 8" to="chunk1/bubble 8" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 9" to="chunk1/bubble 9" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 10" to="chunk1/bubble 10" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 11" to="chunk1/bubble 11" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 12" to="chunk1/bubble 12" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 13" to="chunk1/bubble 13" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 14" to="chunk1/bubble 14" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 15" to="chunk1/bubble 15" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 16" to="chunk1/bubble 16" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 17" to="chunk1/bubble 17" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 18" to="chunk1/bubble 18" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 19" to="chunk1/bubble 19" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 20" to="chunk1/bubble 20" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 21" to="chunk1/bubble 21" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 22" to="chunk1/bubble 22" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 23" to="chunk1/bubble 23" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 24" to="chunk1/bubble 24" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 25" to="chunk1/bubble 25" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 26" to="chunk1/bubble 26" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 27" to="chunk1/bubble 27" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 28" to="chunk1/bubble 28" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 29" to="chunk1/bubble 29" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 30" to="chunk1/bubble 30" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 31" to="chunk1/bubble 31" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 32" to="chunk1/bubble 32" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 33" to="chunk1/bubble 33" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 34" to="chunk1/bubble 34" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 35" to="chunk1/bubble 35" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 36" to="chunk1/bubble 36" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 37" to="chunk1/bubble 37" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 38" to="chunk1/bubble 38" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 39" to="chunk1/bubble 39" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 40" to="chunk1/bubble 40" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 41" to="chunk1/bubble 41" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 42" to="chunk1/bubble 42" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 43" to="chunk1/bubble 43" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 44" to="chunk1/bubble 44" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 45" to="chunk1/bubble 45" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 46" to="chunk1/bubble 46" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 47" to="chunk1/bubble 47" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 48" to="chunk1/bubble 48" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="chunk1/bubble 49" to="chunk1/bubble 49" method="_on_bubble_body_enter"]
+
+

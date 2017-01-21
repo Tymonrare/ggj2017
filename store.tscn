@@ -1,24 +1,26 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
-[sub_resource type="GDScript" id=7]
+[ext_resource path="res://font/titilium-bold.fnt" type="BitmapFont" id=1]
+
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Label\n\nfunc update():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text(\"money: %d\" % gs.money);\n\nfunc _on_moneyShow_visibility_changed():\n\tupdate();\n\tpass # replace with function body\n"
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=2]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 50;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 5;\n\tset_text((\"add explodion power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 25;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 100);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 100): return;\n\tgs.money -= 100;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 10;\n\tset_text((\"increase max energy\\n current: %d\" % gs.maxEnergy) + \"\\n cost: %d\" % 100);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=4]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.3;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 50);\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.1;\n\tset_text((\"decrease dumping\\n current: %1.3f\" % gs.dumping) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=5]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 500);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 500): return;\n\tgs.money -= 500;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 50;\n\tset_text((\"add infect power\\n current: %d\" % gs.infectPower) + \"\\n cost: %d\" % 500);\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power\\n current: %d\" % gs.explodeForce) + \"\\n cost: %d\" % 50);\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 20;\n\tset_text((\"add infect power\\n current: %d\" % gs.infectPower) + \"\\n cost: %d\" % 50);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=6]
 
@@ -37,30 +39,36 @@ margin/bottom = 0.0
 
 [node name="moneyShow" type="Label" parent="."]
 
+anchor/left = 1
+anchor/right = 1
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 14.0
+margin/left = -1165.0
+margin/top = 4.0
+margin/right = -1233.0
+margin/bottom = 27.0
+custom_fonts/font = ExtResource( 1 )
 text = "money:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 7 )
+script/script = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
+anchor/left = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 120.0
-margin/top = 289.0
-margin/right = 875.0
-margin/bottom = 513.0
+margin/left = -227.0
+margin/top = 287.0
+margin/right = -982.0
+margin/bottom = -511.0
 alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -78,6 +86,7 @@ alignment = 1
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
 
 rect/min_size = Vector2( 100, 0 )
+hint/tooltip = "Сила, с которой будут разлетаться ваши вирусы"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -91,11 +100,12 @@ enabled_focus_mode = 2
 shortcut = null
 text = "add explodion power"
 flat = false
-script/script = SubResource( 8 )
+script/script = SubResource( 2 )
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
 
 rect/min_size = Vector2( 100, 0 )
+hint/tooltip = "Максимальный запас энергии, доступный за игру"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -113,7 +123,6 @@ script/script = SubResource( 3 )
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -127,6 +136,7 @@ alignment = 1
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer1"]
 
 rect/min_size = Vector2( 100, 0 )
+hint/tooltip = "Сила торможения"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -145,6 +155,7 @@ script/script = SubResource( 4 )
 [node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer1"]
 
 rect/min_size = Vector2( 100, 0 )
+hint/tooltip = "Сила сопротивления иммунитету"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2

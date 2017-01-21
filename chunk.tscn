@@ -2,7 +2,7 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "tool\n\nextends Node\nexport var size = 10;\nvar spawned = false;\nvar bubbleref = preload(\"res://bubble.tscn\");\n\nfunc _ready():\n\tif(spawned): return;\n\tspawned = true;\n\tfor x in range(size):\n\t\tfor y in range(size):\n\t\t\tvar bubble = bubbleref.instance();\n\t\t\tbubble.set_rot(randf(360));\n\t\t\tbubble.set_pos(Vector2(x*200+rand_range(-100,100),y*200+rand_range(-100,100)));\n\t\t\tadd_child(bubble);\n\tpass;"
+script/source = "tool\n\nextends Node\nexport var size = 10 setget set_chunk_size, get_chunk_size;\nvar bubbleref = preload(\"res://bubble.tscn\");\n\nfunc set_chunk_size(newvalue):\n\tsize=newvalue;\n\tspawnChilds();\n\nfunc get_chunk_size():\n\treturn size \n\nfunc spawnChilds():\n\tfor i in get_children():\n\t\tremove_child(i);\n\t\tif(Globals.get(\"bubbles_counter\")):\n\t\t\tGlobals.get(\"bubbles_counter\").decrease();\n\t\n\tfor x in range(size):\n\t\tfor y in range(size):\n\t\t\tvar bubble = bubbleref.instance();\n\t\t\tbubble.set_rot(randf(360));\n\t\t\tbubble.set_pos(Vector2(x*200+rand_range(-100,100),y*200+rand_range(-100,100)));\n\t\t\tadd_child(bubble);\n\nfunc _ready():\n\tspawnChilds();\n\tpass;"
 
 [node name="chunk" type="Node2D"]
 

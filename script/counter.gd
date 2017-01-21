@@ -3,6 +3,7 @@ extends Control
 var total = 0.0;
 var infected = 0.0;
 var combo = 0;
+
 func _enter_tree():
 	Globals.set("bubbles_counter", self);
 	
@@ -11,11 +12,16 @@ func add():
 	get_node("total").set_text("total bubbles: %d" % total);
 	updatePercent();
 	
+func decrease():
+	total -= 1;
+	get_node("total").set_text("total bubbles: %d" % total);
+	updatePercent();
+	
 func addInfected():
 	infected += 1;
 	combo += 1;
 	var saver = Globals.get("game_saver");
-	saver.savedict.money += combo*2;
+	saver.savedict.money += combo;
 	get_node("infected").set_text("infected bubbles: %d" % infected);
 	get_node("combo").set_text("combo: %dx" % combo);
 	updatePercent();
