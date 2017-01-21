@@ -15,7 +15,7 @@ func addInfected():
 	infected += 1;
 	combo += 1;
 	var saver = Globals.get("game_saver");
-	saver.savedict.money += combo;
+	saver.savedict.money += combo*2;
 	get_node("infected").set_text("infected bubbles: %d" % infected);
 	get_node("combo").set_text("combo: %dx" % combo);
 	updatePercent();
