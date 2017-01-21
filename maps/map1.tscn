@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://objs/rock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objs/rock2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://image/back/backparticle2.png" type="Texture" id=3]
 [ext_resource path="res://image/back/back2.png" type="Texture" id=4]
 [ext_resource path="res://image/rock1.png" type="Texture" id=5]
+[ext_resource path="res://maps/parallaxes.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ColorRamp" id=1]
 
@@ -454,102 +455,87 @@ modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
 [node name="rock115" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1468.79, 161.224 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock116" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1486.05, 605.736 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock117" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1209.85, 925.094 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock118" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1015.65, 851.728 )
 transform/rot = 101.667
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock119" type="Sprite" parent="."]
 
 transform/pos = Vector2( 679.025, 894.885 )
 transform/rot = 24.3531
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock120" type="Sprite" parent="."]
 
 transform/pos = Vector2( 407.139, 912.147 )
 transform/rot = 16.0389
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock121" type="Sprite" parent="."]
 
 transform/pos = Vector2( -15.7948, 877.622 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock122" type="Sprite" parent="."]
 
 transform/pos = Vector2( 642.864, -248.763 )
 transform/rot = -10.9259
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock123" type="Sprite" parent="."]
 
 transform/pos = Vector2( -202.565, 648.893 )
 transform/rot = -38.3561
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock124" type="Sprite" parent="."]
 
 transform/pos = Vector2( -228.459, 385.638 )
 transform/rot = 51.1565
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock125" type="Sprite" parent="."]
 
 transform/pos = Vector2( -214.105, 109.436 )
 transform/rot = -29.2292
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock126" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1519.38, 398.585 )
 transform/rot = 53.6787
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock127" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1480.54, -93.3995 )
 transform/rot = -73.685
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock128" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1394.23, 856.044 )
 transform/rot = -70.3559
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock131" type="Sprite" parent="."]
 
 transform/pos = Vector2( 744.349, 723.056 )
 transform/rot = -70.3559
-transform/scale = Vector2( 1, 1 )
 z/z = -100
 texture = ExtResource( 5 )
 modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
@@ -558,7 +544,6 @@ modulate = Color( 0.175781, 0.175781, 0.175781, 1 )
 
 transform/pos = Vector2( -12.6761, 674.786 )
 transform/rot = -70.3559
-transform/scale = Vector2( 1, 1 )
 z/z = -100
 texture = ExtResource( 5 )
 modulate = Color( 0.449219, 0.449219, 0.449219, 1 )
@@ -576,14 +561,14 @@ modulate = Color( 0.265625, 0.265625, 0.265625, 1 )
 
 transform/pos = Vector2( 837.507, 912.147 )
 transform/rot = 55.15
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="rock130" type="Sprite" parent="."]
 
 transform/pos = Vector2( 216.053, 927.678 )
 transform/rot = -49.7998
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
+
+[node name="parallaxes" parent="." instance=ExtResource( 6 )]
 
 
