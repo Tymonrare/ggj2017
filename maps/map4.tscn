@@ -73,7 +73,7 @@ margin/top = 202.0
 margin/right = 441.0
 margin/bottom = 225.0
 custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "You can\'t interact with bubbles in storm zones"
+text = "You can\'t click on bubbles in the storm zones, but you can affect them by using bubbles which are close to them."
 appearDelay = 1
 
 [node name="zone" parent="." instance=ExtResource( 6 )]
