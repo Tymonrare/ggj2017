@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://script/counter.gd" type="Script" id=1]
 [ext_resource path="res://font/titilium-bold.fnt" type="BitmapFont" id=2]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Label\n\nfunc _ready():\n\tset_process(true);\n\t\nfunc _process(delta):\n\tset_rotation(lerp(get_rotation(), 0,10*delta));\n\tset_scale(Vector2(lerp(get_scale().x, 1, 10*delta),lerp(get_scale().y, 1, 10*delta)));\n\tpass;\n\t\nfunc shake():\n\tset_rotation(get_rotation()+rand_range(-0.1,0.1));\n\tset_scale(Vector2(get_scale().x+randf(0.1),get_scale().y+randf(0.1)));"
 
 [sub_resource type="GDScript" id=1]
 
@@ -79,9 +83,12 @@ margin/right = 93.0
 margin/bottom = 85.0
 custom_fonts/font = ExtResource( 2 )
 text = "combo: 0x"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = SubResource( 2 )
 
 [node name="nextlevelButton" type="Button" parent="."]
 
@@ -101,6 +108,15 @@ text = "next level"
 flat = false
 script/script = SubResource( 1 )
 
+[node name="comboDiscard" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="pressed" from="nextlevelButton" to="nextlevelButton" method="_on_nextlevelButton_pressed"]
+
+[connection signal="timeout" from="comboDiscard" to="." method="_on_comboDiscard_timeout"]
 
 

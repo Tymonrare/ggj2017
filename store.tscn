@@ -1,6 +1,10 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://font/titilium-bold.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://image/icons/explode.png" type="Texture" id=2]
+[ext_resource path="res://image/icons/energy.png" type="Texture" id=3]
+[ext_resource path="res://image/icons/dumping.png" type="Texture" id=4]
+[ext_resource path="res://image/icons/infect.png" type="Texture" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -65,10 +69,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -227.0
+margin/left = -225.0
 margin/top = 287.0
-margin/right = -982.0
-margin/bottom = -511.0
+margin/right = -980.0
+margin/bottom = -597.0
 alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -80,7 +84,7 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 755.0
-margin/bottom = 20.0
+margin/bottom = 70.0
 alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -91,14 +95,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 231.0
+margin/left = 165.0
 margin/top = 0.0
 margin/right = 376.0
-margin/bottom = 20.0
+margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "add explodion power"
+icon = ExtResource( 2 )
 flat = false
 script/script = SubResource( 2 )
 
@@ -112,12 +117,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 380.0
 margin/top = 0.0
-margin/right = 524.0
-margin/bottom = 20.0
+margin/right = 590.0
+margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "increase max energy"
+icon = ExtResource( 3 )
 flat = false
 script/script = SubResource( 3 )
 
@@ -128,9 +134,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 24.0
+margin/top = 74.0
 margin/right = 755.0
-margin/bottom = 44.0
+margin/bottom = 144.0
 alignment = 1
 
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer1"]
@@ -141,14 +147,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 251.0
+margin/left = 185.0
 margin/top = 0.0
 margin/right = 381.0
-margin/bottom = 20.0
+margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "decrease dumping"
+icon = ExtResource( 4 )
 flat = false
 script/script = SubResource( 4 )
 
@@ -162,12 +169,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 385.0
 margin/top = 0.0
-margin/right = 503.0
-margin/bottom = 20.0
+margin/right = 569.0
+margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "add infect power"
+icon = ExtResource( 5 )
 flat = false
 script/script = SubResource( 5 )
 
@@ -178,9 +186,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 48.0
+margin/top = 148.0
 margin/right = 755.0
-margin/bottom = 68.0
+margin/bottom = 168.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

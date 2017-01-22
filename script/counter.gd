@@ -20,15 +20,17 @@ func decrease():
 func addInfected():
 	infected += 1;
 	combo += 1;
+	get_node("combo").shake();
+	get_node("comboDiscard").start();
 	var saver = Globals.get("game_saver");
-	saver.savedict.money += log(combo)*10;
+	saver.savedict.money += log(combo)/2;
 	get_node("infected").set_text("infected bubbles: %d" % infected);
 	get_node("combo").set_text("combo: %dx" % combo);
 	updatePercent();
 
 func discardCombo():
 	var saver = Globals.get("game_saver");
-	saver.savedict.money += combo*2;
+	saver.savedict.money += combo;
 	combo = 0;
 	get_node("combo").set_text("combo: %dx" % combo);
 	pass;
@@ -47,3 +49,7 @@ func updatePercent():
 		get_node("nextlevelButton").add_child(appearText);
 		appearText.set_text("Target reached!");
 		appearText.set_pos(Vector2(0,-30));
+
+func _on_comboDiscard_timeout():
+	discardCombo();
+	pass # replace with function body
