@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://image/radial16.png" type="Texture" id=1]
 
 [sub_resource type="ColorRamp" id=1]
 
@@ -20,9 +22,11 @@ margin/bottom = 1534.0
 [node name="Particles2D" type="Particles2D" parent="."]
 
 transform/pos = Vector2( 784.121, 706.211 )
-config/amount = 10
+config/amount = 100
 config/lifetime = 5.0
+config/preprocess = 2.5
 config/half_extents = Vector2( 700, 700 )
+config/texture = ExtResource( 1 )
 params/direction = 360.0
 params/spread = 360.0
 params/linear_velocity = 30.0
@@ -35,13 +39,44 @@ params/tangential_accel = 0.0
 params/damping = 0.0
 params/initial_angle = 0.0
 params/initial_size = 0.0
-params/final_size = 50.0
+params/final_size = 5.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 randomness/spread = 10.0
 randomness/linear_velocity = 1.0
+randomness/spin_velocity = 1.0
+color/color = Color( 1, 0, 0, 1 )
+color/color_ramp = SubResource( 1 )
+
+[node name="Particles2D1" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 784.121, 706.211 )
+config/amount = 50
+config/lifetime = 1.0
+config/preprocess = 2.5
+config/half_extents = Vector2( 700, 700 )
+config/texture = ExtResource( 1 )
+params/direction = 360.0
+params/spread = 180.0
+params/linear_velocity = 100.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 5.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 10.0
+randomness/linear_velocity = 0.5
 randomness/spin_velocity = 1.0
 color/color = Color( 1, 0, 0, 1 )
 color/color_ramp = SubResource( 1 )

@@ -42,7 +42,7 @@ margin/right = 92.0
 margin/bottom = 60.0
 custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "Your goal is to make more than 80% of bubbles infected"
-appearDelay = 3
+appearDelay = 2
 
 [node name="appearLabel3" parent="Node2D" instance=ExtResource( 1 )]
 
