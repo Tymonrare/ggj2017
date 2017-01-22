@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://image/bubble/mainBody.png" type="Texture" id=1]
 [ext_resource path="res://image/bubble/virus.png" type="Texture" id=2]
 [ext_resource path="res://image/bubble/redHighlight.png" type="Texture" id=3]
+[ext_resource path="res://misc/gore_01.wav" type="Sample" id=4]
+[ext_resource path="res://misc/gore_02.wav" type="Sample" id=5]
+[ext_resource path="res://misc/gore_03.wav" type="Sample" id=6]
+[ext_resource path="res://misc/gore_04.wav" type="Sample" id=7]
+[ext_resource path="res://misc/gore_05.wav" type="Sample" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -11,7 +16,7 @@ radius = 45.0
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends RigidBody2D\n\nvar selfref = preload(\"res://bubble.tscn\");\nvar infected = false;\nvar selfSize = 45;\nvar explodeForce = 0.0;\nvar infectPower = 0;\nvar resistancePower = rand_range(5,15);\nexport var immunitet = false;\n\nfunc _ready():\n\tset_linear_damp(Globals.get(\"game_saver\").savedict.dumping);\n\tif(infected):\n\t\tget_node(\"deathAnimation\").play(\"death\");\n\t\tget_node(\"node/Sprite\").set_modulate(Color (1,0,0));\n\t\tpass;\n\telse:\n\t\tget_node(\"animation\").play(\"idle\");\n\t\tget_node(\"animation\").set_speed(rand_range(0.9,1.1));\n\t\tGlobals.get(\"bubbles_counter\").add();\n\tif (immunitet):\n\t\tget_node(\"node/Sprite\").set_modulate(Color (0,0,1)) ;\n\tpass;\n\nfunc _exit_tree():\n\tif(!infected && !immunitet):\n\t\tGlobals.get(\"bubbles_counter\").decrease();\n\t\nfunc begin_exploding(force):\n\tif(!infected):\n\t\texplodeForce = force;\n\t\tinfected = true;\n\t\tif(!immunitet):\n\t\t\tGlobals.get(\"bubbles_counter\").addInfected();\n\t\t\tget_node(\"animation\").play(\"modulate\");\n\t\telse:\n\t\t\texplodeForce = min(explodeForce*2, 1000);\n\t\t\t_on_AnimationPlayer_finished();\n\nfunc _on_Panel_input_event( ev ):\n\tif(!infected && ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !immunitet):\n\t\tif(ev.pressed):\n\t\t\tGlobals.set(\"curr_pressed_bubble\", self);\n\t\telif(Globals.get(\"allow_energy_usage\")):\n\t\t\tclickInfect(Globals.get(\"last_energy_usage_power\"));\n\t\t\tGlobals.set(\"curr_pressed_bubble\", null);\n\t\telse:\n\t\t\tGlobals.set(\"curr_pressed_bubble\", null);\n\nfunc clickInfect(val):\n\tinfectPower = Globals.get(\"game_saver\").savedict.infectPower;\n\tbegin_exploding(val);\n\tGlobals.get(\"bubbles_counter\").discardCombo();\n\tget_node(\"animation\").play(\"blums\");\n\nfunc initShape(size):\n\tselfSize = size;\n\t#remove_child(get_node(\"shape\"));\n\t\n\tvar newShape = CircleShape2D.new();\n\t#var newCollider = CollisionShape2D.new();\n\tget_node(\"shape\").set_shape(newShape);\n\tnewShape.set_radius(selfSize);\n\t#add_child(newCollider);\n\nfunc _on_bubble_body_enter( body ):\n\tif (infected && body extends selfref.instance().get_script()):\n\t\tif(body.resistancePower < infectPower || immunitet):\n\t\t\tbody.infectPower = infectPower - body.resistancePower;\n\t\t\tif(!body.immunitet):\n\t\t\t\tbody.immunitet=immunitet;\n\t\t\tbody.begin_exploding(explodeForce);\n\t\t\t\n\t\telse:\n\t\t\tbody.resistancePower -= infectPower;\n\tpass # replace with function body\n\nvar infectedSprite = preload(\"res://image/bubble/infectedBody.png\");\n\nfunc _on_AnimationPlayer_finished():\n\tvar chunks = rand_range(5,10);\n\tif(selfSize > 5):\n\t\tfor i in range(chunks):\n\t\t\tvar newChild = selfref.instance();\n\t\t\tnewChild.infectPower = infectPower;\n\t\t\tnewChild.set_pos(Vector2(get_pos().x+rand_range(-selfSize, selfSize), get_pos().y+rand_range(-selfSize, selfSize)));\n\t\t\tnewChild.get_node(\"node\").set_scale(get_node(\"node\").get_scale()/chunks*2);\n\t\t\tnewChild.apply_impulse(Vector2(0,0), Vector2(rand_range(-explodeForce, explodeForce), rand_range(-explodeForce, explodeForce)));\n\t\t\tnewChild.initShape(selfSize/chunks*2);\n\t\t\tnewChild.get_node(\"node/Sprite\").set_texture(infectedSprite);\n\t\t\tnewChild.explodeForce = explodeForce;\n\t\t\tnewChild.infected = true;\n\t\t\tnewChild.immunitet = immunitet;\n\t\t\tget_parent().add_child(newChild);\n\t\t\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n\nfunc _on_deathAnimation_finished():\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n"
+script/source = "extends RigidBody2D\n\nvar selfref = preload(\"res://bubble.tscn\");\nvar infected = false;\nvar selfSize = 45;\nvar explodeForce = 0.0;\nvar infectPower = 0;\nvar resistancePower = rand_range(5,15);\nexport var immunitet = false;\n\nfunc _ready():\n\tset_linear_damp(Globals.get(\"game_saver\").savedict.dumping);\n\tif(infected):\n\t\tget_node(\"deathAnimation\").play(\"death\");\n\t\tget_node(\"node/Sprite\").set_modulate(Color (1,0,0));\n\t\tpass;\n\telse:\n\t\tget_node(\"animation\").play(\"idle\");\n\t\tget_node(\"animation\").set_speed(rand_range(0.9,1.1));\n\t\tGlobals.get(\"bubbles_counter\").add();\n\tif (immunitet):\n\t\tget_node(\"node/Sprite\").set_modulate(Color (0,0,1)) ;\n\tpass;\n\nfunc _exit_tree():\n\tif(!infected && !immunitet):\n\t\tGlobals.get(\"bubbles_counter\").decrease();\n\t\nfunc begin_exploding(force):\n\tif(!infected):\n\t\texplodeForce = force;\n\t\tinfected = true;\n\t\tif(!immunitet):\n\t\t\tGlobals.get(\"bubbles_counter\").addInfected();\n\t\t\tget_node(\"animation\").play(\"modulate\");\n\t\telse:\n\t\t\texplodeForce = min(explodeForce*2, 1000);\n\t\t\t_on_AnimationPlayer_finished();\n\nfunc _on_Panel_input_event( ev ):\n\tif(!infected && ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !immunitet):\n\t\tif(ev.pressed):\n\t\t\tGlobals.set(\"curr_pressed_bubble\", self);\n\nfunc clickInfect(val):\n\tinfectPower = Globals.get(\"game_saver\").savedict.infectPower;\n\tbegin_exploding(val);\n\tGlobals.get(\"bubbles_counter\").discardCombo();\n\tget_node(\"animation\").play(\"blums\");\n\nfunc initShape(size):\n\tselfSize = size;\n\t#remove_child(get_node(\"shape\"));\n\t\n\tvar newShape = CircleShape2D.new();\n\t#var newCollider = CollisionShape2D.new();\n\tget_node(\"shape\").set_shape(newShape);\n\tnewShape.set_radius(selfSize);\n\t#add_child(newCollider);\n\nfunc _on_bubble_body_enter( body ):\n\tif (infected && body extends selfref.instance().get_script()):\n\t\tif(body.resistancePower < infectPower || immunitet):\n\t\t\tbody.infectPower = infectPower - body.resistancePower;\n\t\t\tif(!body.immunitet):\n\t\t\t\tbody.immunitet=immunitet;\n\t\t\tbody.begin_exploding(explodeForce);\n\t\t\t\n\t\telse:\n\t\t\tbody.resistancePower -= infectPower;\n\tpass # replace with function body\n\nvar infectedSprite = preload(\"res://image/bubble/infectedBody.png\");\n\nfunc _on_AnimationPlayer_finished():\n\tvar chunks = rand_range(5,10);\n\tif(selfSize > 5):\n\t\tfor i in range(chunks):\n\t\t\tvar newChild = selfref.instance();\n\t\t\tnewChild.infectPower = infectPower;\n\t\t\tnewChild.set_pos(Vector2(get_pos().x+rand_range(-selfSize, selfSize), get_pos().y+rand_range(-selfSize, selfSize)));\n\t\t\tnewChild.get_node(\"node\").set_scale(get_node(\"node\").get_scale()/chunks*2);\n\t\t\tnewChild.apply_impulse(Vector2(0,0), Vector2(rand_range(-explodeForce, explodeForce), rand_range(-explodeForce, explodeForce)));\n\t\t\tnewChild.initShape(selfSize/chunks*2);\n\t\t\tnewChild.get_node(\"node/Sprite\").set_texture(infectedSprite);\n\t\t\tnewChild.explodeForce = explodeForce;\n\t\t\tnewChild.infected = true;\n\t\t\tnewChild.immunitet = immunitet;\n\t\t\tget_parent().add_child(newChild);\n\tget_node(\"SamplePlayer\").play(\"gore_0\"+\"%d\"%(randi()%4+1));\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n\nfunc _on_deathAnimation_finished():\n\tget_parent().remove_child(self);\n\tpass # replace with function body\n"
 
 [sub_resource type="Animation" id=3]
 
@@ -56,7 +61,7 @@ tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 
 resource/name = "idle"
 length = 2.0
@@ -94,11 +99,19 @@ tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
 
+[sub_resource type="SampleLibrary" id=7]
+
+samples/gore_01 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+samples/gore_02 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
+samples/gore_03 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 6 ) }
+samples/gore_04 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 7 ) }
+samples/gore_05 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 8 ) }
+
 [node name="bubble" type="RigidBody2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.291969, 0.291992 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -122,7 +135,6 @@ immunitet = false
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.291969, 0.291992 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -135,7 +147,6 @@ transform/scale = Vector2( 0.90625, 0.90625 )
 
 editor/display_folded = true
 visibility/opacity = 0.7
-transform/pos = Vector2( 2.5424, 1.10168 )
 texture = ExtResource( 1 )
 
 [node name="virusSprite" type="Sprite" parent="node/Sprite"]
@@ -158,10 +169,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -29.0
-margin/top = -30.0
-margin/right = 31.0
-margin/bottom = 28.0
+margin/left = -50.0
+margin/top = -47.0
+margin/right = 50.0
+margin/bottom = 49.0
 
 [node name="deathAnimation" type="AnimationPlayer" parent="."]
 
@@ -180,7 +191,7 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/blums = SubResource( 4 )
-anims/idle = SubResource( 9 )
+anims/idle = SubResource( 5 )
 anims/modulate = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
@@ -193,6 +204,23 @@ process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 7 )
+default/volume_db = -5.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
 
 [connection signal="body_enter" from="." to="." method="_on_bubble_body_enter"]
 

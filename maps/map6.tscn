@@ -26,8 +26,7 @@ margin/left = 25.0
 margin/top = 145.0
 margin/right = 301.0
 margin/bottom = 168.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
-text = "Some bubbles has usefull effects"
+text = "Some bubbles have usefull effects"
 
 [node name="map" parent="." instance=ExtResource( 3 )]
 

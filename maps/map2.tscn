@@ -19,7 +19,6 @@ margin/left = 49.0
 margin/top = 187.0
 margin/right = 325.0
 margin/bottom = 210.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "Click on any bubble to infect it"
 
 [node name="appearLabel1" parent="Node2D" instance=ExtResource( 1 )]
@@ -29,7 +28,6 @@ margin/left = -81.0
 margin/top = 291.0
 margin/right = 323.0
 margin/bottom = 314.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "..or hold for additional explosion power"
 appearDelay = 1
 
@@ -40,9 +38,8 @@ margin/left = -327.0
 margin/top = 37.0
 margin/right = 92.0
 margin/bottom = 60.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "Your goal is to make more than 80% of bubbles infected"
-appearDelay = 2
+appearDelay = 3
 
 [node name="appearLabel3" parent="Node2D" instance=ExtResource( 1 )]
 
@@ -53,9 +50,8 @@ margin/left = -438.0
 margin/top = -147.0
 margin/right = -19.0
 margin/bottom = -194.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "Be aware, your energy is limited!"
-appearDelay = 3
+appearDelay = 4
 
 [node name="map" parent="." instance=ExtResource( 2 )]
 

@@ -20,7 +20,6 @@ margin/left = 25.0
 margin/top = 145.0
 margin/right = 301.0
 margin/bottom = 168.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "DESTROY"
 
 [node name="appearLabel1" parent="Node2D" instance=ExtResource( 1 )]
@@ -30,7 +29,6 @@ margin/left = -77.0
 margin/top = 201.0
 margin/right = 327.0
 margin/bottom = 224.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "THEM"
 appearDelay = 1
 
@@ -41,7 +39,6 @@ margin/left = -2.0
 margin/top = 232.0
 margin/right = 417.0
 margin/bottom = 255.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "ALL"
 appearDelay = 2
 
@@ -52,7 +49,6 @@ margin/left = -250.0
 margin/top = 81.0
 margin/right = 169.0
 margin/bottom = 104.0
-custom_colors/font_color = Color( 0.747314, 1, 0.71875, 1 )
 text = "..laggy"
 appearDelay = 3
 

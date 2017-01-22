@@ -1,0 +1,13 @@
+[gd_resource type="CanvasItemMaterial" load_steps=2 format=1]
+
+[sub_resource type="CanvasItemShader" id=4]
+
+_code = { "fragment":"\nuniform float radius=5.0;\nuniform color modulate=color(0,0,0,0.7);\n\nvec2 ps = TEXTURE_PIXEL_SIZE;\n\nvec4 shadow = tex(TEXTURE,UV+vec2(-radius,-radius)*ps);\nshadow += tex(TEXTURE,UV+vec2(-radius,0)*ps);\nshadow += tex(TEXTURE,UV+vec2(-radius,radius)*ps);\nshadow += tex(TEXTURE,UV+vec2(0,-radius)*ps);\nshadow += tex(TEXTURE,UV+vec2(0,radius)*ps);\nshadow += tex(TEXTURE,UV+vec2(radius,-radius)*ps);\nshadow += tex(TEXTURE,UV+vec2(radius,0)*ps);\nshadow += tex(TEXTURE,UV+vec2(radius,radius)*ps);\nshadow/=8;\nshadow*=modulate;\n\nvec4 col = tex(TEXTURE,UV);\nCOLOR=mix(shadow,col,col.a);", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[resource]
+
+shader/shader = SubResource( 4 )
+shader/shading_mode = 0
+shader_param/radius = 5.0
+shader_param/modulate = Color( 0, 0, 0, 0.7 )
+

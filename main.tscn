@@ -8,7 +8,7 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Control\n\nvar currMap;\n\nfunc _enter_tree():\n\tGlobals.set(\"map_control\", self);\n\nfunc _ready():\n\tload_map();\n\t\n\tpass;\nfunc next_map():\n\tGlobals.get(\"game_saver\").savedict.currLevel += 1;\n\tGlobals.get(\"game_saver\").saveData();\n\tget_tree().reload_current_scene();\n\t\nfunc load_map():\n\tif(currMap):\n\t\tremove_child(currMap);\n\t\n\tvar map = load((\"res://maps/map%d\"%Globals.get(\"game_saver\").savedict.currLevel)+\".tscn\");\n\tif(!map): return;\n\t\n\tcurrMap = map.instance();\n\tadd_child(currMap);"
+script/source = "extends Control\n\nvar currMap;\n\nfunc _enter_tree():\n\tGlobals.set(\"map_control\", self);\n\nfunc _ready():\n\tload_map();\n\t\n\tpass;\nfunc next_map():\n\tGlobals.get(\"game_saver\").savedict.currLevel += 1;\n\tGlobals.get(\"game_saver\").saveData();\n\tget_tree().reload_current_scene();\n\t\nfunc load_map():\n\tif(currMap):\n\t\tremove_child(currMap);\n\t\n\tvar map = load((\"res://maps/map%d\"%Globals.get(\"game_saver\").savedict.currLevel)+\".tscn\");\n\tif(!map): \n\t\tget_node(\"CanvasLayer/reset1\").set_hidden(false);\n\t\treturn;\n\t\n\tcurrMap = map.instance();\n\tadd_child(currMap);"
 
 [sub_resource type="GDScript" id=2]
 
@@ -24,7 +24,7 @@ script/source = "\n\n\nfunc _on_Button_pressed():\n\tGlobals.get(\"game_saver\")
 
 [sub_resource type="GDScript" id=5]
 
-script/source = "extends Node\n\nvar savedict = {\n        money=0,\n        explodeForce=200,\n        dumping=4, #Vector2 is not supported by json\n        infectPower=200,\n\t\tmaxEnergy = 100,\n\t\tcurrLevel = 2,\n\t\texplodeUpgradeLevel=0,\n\t\tdumpingUpgradeLevel=0,\n\t\tinfectUpgradeLevel=0,\n\t\tenergyUpgradeLevel=0,\n}\n\nfunc _resetAll():\n\tvar dir = Directory.new(); dir.remove(\"user://savegame.save\");\n\tget_tree().reload_current_scene();\n\nfunc _enter_tree():\n\tGlobals.set(\"game_saver\", self);\n\tloadData();\n\n\nfunc loadData():\n\tvar savegame = File.new()\n\tif !savegame.file_exists(\"user://savegame.save\"):\n\t\treturn #Error!  We don\'t have a save to load\n\t\n\tvar currentline = {} # dict.parse_json() requires a declared dict.\n\tsavegame.open(\"user://savegame.save\", File.READ)\n\twhile (!savegame.eof_reached()):\n\t\tcurrentline.parse_json(savegame.get_line())\n\t\t\n\t\tsavedict.money = currentline[\"money\"];\n\t\tsavedict.explodeForce = currentline[\"explodeForce\"];\n\t\tsavedict.dumping = currentline[\"dumping\"];\n\t\tsavedict.infectPower = currentline[\"infectPower\"];\n\t\tsavedict.maxEnergy = currentline[\"maxEnergy\"];\n\t\tsavedict.currLevel = currentline[\"currLevel\"];\n\tpass;\n\nfunc saveData():\n\tprint(savedict);\n\tvar savegame = File.new();\n\tsavegame.open(\"user://savegame.save\", File.WRITE);\n\tsavegame.store_line(savedict.to_json())\n\tsavegame.close();\n\tpass;"
+script/source = "extends Node\n\nvar savedict = {\n        money=0,\n        explodeForce=200,\n        dumping=4, #Vector2 is not supported by json\n        infectPower=200,\n\t\tmaxEnergy = 100,\n\t\tcurrLevel = 2,\n\t\texplodeUpgradeLevel=0,\n\t\tdumpingUpgradeLevel=0,\n\t\tinfectUpgradeLevel=0,\n\t\tenergyUpgradeLevel=0,\n}\n\nfunc _resetAll():\n\tvar dir = Directory.new(); dir.remove(\"user://savegame.save\");\n\tget_tree().reload_current_scene();\n\nfunc _enter_tree():\n\tGlobals.set(\"game_saver\", self);\n\tloadData();\n\n\nfunc loadData():\n\tvar savegame = File.new()\n\tif !savegame.file_exists(\"user://savegame.save\"):\n\t\treturn #Error!  We don\'t have a save to load\n\t\n\tvar currentline = {} # dict.parse_json() requires a declared dict.\n\tsavegame.open(\"user://savegame.save\", File.READ)\n\twhile (!savegame.eof_reached()):\n\t\tcurrentline.parse_json(savegame.get_line())\n\t\t\n\t\tsavedict.money = currentline[\"money\"];\n\t\tsavedict.explodeForce = currentline[\"explodeForce\"];\n\t\tsavedict.dumping = currentline[\"dumping\"];\n\t\tsavedict.infectPower = currentline[\"infectPower\"];\n\t\tsavedict.maxEnergy = currentline[\"maxEnergy\"];\n\t\tsavedict.currLevel = currentline[\"currLevel\"];\n\t\tsavedict.explodeUpgradeLevel = currentline[\"explodeUpgradeLevel\"];\n\t\tsavedict.dumpingUpgradeLevel = currentline[\"dumpingUpgradeLevel\"];\n\t\tsavedict.infectUpgradeLevel = currentline[\"infectUpgradeLevel\"];\n\t\tsavedict.energyUpgradeLevel = currentline[\"energyUpgradeLevel\"];\n\tpass;\n\nfunc saveData():\n\tprint(savedict);\n\tvar savegame = File.new();\n\tsavegame.open(\"user://savegame.save\", File.WRITE);\n\tsavegame.store_line(savedict.to_json())\n\tsavegame.close();\n\tpass;"
 
 [node name="Control" type="Control"]
 
@@ -61,7 +61,6 @@ script/script = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -121,6 +120,7 @@ margin/bottom = 364.0
 visibility/opacity = 0.1
 anchor/left = 1
 anchor/right = 1
+hint/tooltip = "discard all saves"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -135,11 +135,31 @@ shortcut = null
 text = "reset"
 flat = false
 
+[node name="reset1" type="Button" parent="CanvasLayer"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 534.0
+margin/top = 294.0
+margin/right = 547.0
+margin/bottom = 326.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "reset game\?"
+flat = false
+
 [node name="restart" type="Button" parent="CanvasLayer"]
 
-visibility/opacity = 0.2
+visibility/opacity = 0.7
 anchor/left = 1
 anchor/right = 1
+hint/tooltip = "restart current level"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -173,6 +193,8 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="CanvasLayer/restartButton" to="CanvasLayer/restartButton" method="_on_restartButton_pressed"]
 
 [connection signal="pressed" from="CanvasLayer/reset" to="saver" method="_resetAll"]
+
+[connection signal="pressed" from="CanvasLayer/reset1" to="saver" method="_resetAll"]
 
 [connection signal="pressed" from="CanvasLayer/restart" to="CanvasLayer/restart" method="_on_Button_pressed"]
 

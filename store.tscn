@@ -12,19 +12,19 @@ script/source = "extends Label\n\nfunc update():\n\tvar gs = Globals.get(\"game_
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explodion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.explodeUpgradeLevel*10));\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 5;\n\tgs.explodeUpgradeLevel += 1;\n\tset_text((\"add explodion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.explodeUpgradeLevel*10));\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add explosion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.explodeUpgradeLevel*10));\n\tcheckNotMax()\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < (50+gs.explodeUpgradeLevel*10)): return;\n\tgs.money -= (50+gs.explodeUpgradeLevel*10);\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.explodeForce += 5;\n\tgs.explodeUpgradeLevel += 1;\n\tset_text((\"add explosion power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.explodeUpgradeLevel*10));\n\tcheckNotMax();\n\tpass # replace with function body\n\nfunc checkNotMax():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.explodeForce >= 400):\n\t\tset_text(\"max\");\n\t\tset_disabled(true);\n\t"
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % (100+gs.energyUpgradeLevel*20));\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 100): return;\n\tgs.money -= 100;\n\tgs.energyUpgradeLevel += 1;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 10;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % (100+gs.energyUpgradeLevel*20));\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % (100+gs.energyUpgradeLevel*20));\n\tcheckNotMax()\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < (100+gs.energyUpgradeLevel*20)): return;\n\tgs.money -= (100+gs.energyUpgradeLevel*20);\n\tgs.energyUpgradeLevel += 1;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.maxEnergy += 10;\n\tset_text((\"increase max energy. Current: %d\" % gs.maxEnergy) + \". Cost: %d\" % (100+gs.energyUpgradeLevel*20));\n\tcheckNotMax()\n\tpass # replace with function body\n\nfunc checkNotMax():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.maxEnergy >= 200):\n\t\tset_text(\"max\");\n\t\tset_disabled(true);"
 
 [sub_resource type="GDScript" id=4]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % (50+gs.dumpingUpgradeLevel*10));\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tgs.dumpingUpgradeLevel += 1;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.1;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % (50+gs.dumpingUpgradeLevel*10));\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % (50+gs.dumpingUpgradeLevel*10));\n\tcheckNotMax();\n\tpass\n\t\nfunc _on_Button_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < (50+gs.dumpingUpgradeLevel*10)): return;\n\tgs.money -= (50+gs.dumpingUpgradeLevel*10);\n\tgs.dumpingUpgradeLevel += 1;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.dumping -= 0.1;\n\tset_text((\"decrease dumping. Current: %1.3f\" % gs.dumping) + \". Cost: %d\" % (50+gs.dumpingUpgradeLevel*10));\n\tcheckNotMax();\n\tpass # replace with function body\n\nfunc checkNotMax():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.dumping <= 2):\n\t\tset_text(\"max\");\n\t\tset_disabled(true);"
 
 [sub_resource type="GDScript" id=5]
 
-script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.infectUpgradeLevel*10));\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < 50): return;\n\tgs.money -= 50;\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 20;\n\tgs.infectUpgradeLevel += 1;\n\tset_text((\"add infect power. Current: %d\" % gs.infectPower) + \". Cost: %d\" % (50+gs.infectUpgradeLevel*10));\n\tpass # replace with function body\n"
+script/source = "extends Button\nfunc _ready():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tset_text((\"add infect power. Current: %d\" % gs.explodeForce) + \". Cost: %d\" % (50+gs.infectUpgradeLevel*10));\n\tpass\n\nfunc _on_Button1_pressed():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.money < (50+gs.infectUpgradeLevel*10)): return;\n\tgs.money -= (50+gs.infectUpgradeLevel*10);\n\tget_node(\"../../../moneyShow\").set_text(\"money:%d\"%gs.money);\n\tgs.infectPower += 20;\n\tgs.infectUpgradeLevel += 1;\n\tset_text((\"add infect power. Current: %d\" % gs.infectPower) + \". Cost: %d\" % (50+gs.infectUpgradeLevel*10));\n\tpass # replace with function body\n\nfunc checkNotMax():\n\tvar gs = Globals.get(\"game_saver\").savedict;\n\tif(gs.infectPower  >= 500):\n\t\tset_text(\"max\");\n\t\tset_disabled(true);"
 
 [sub_resource type="GDScript" id=6]
 
@@ -97,12 +97,12 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 165.0
 margin/top = 0.0
-margin/right = 376.0
+margin/right = 375.0
 margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "add explodion power"
+text = "add explosion power"
 icon = ExtResource( 2 )
 flat = false
 script/script = SubResource( 2 )
@@ -115,9 +115,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 380.0
+margin/left = 379.0
 margin/top = 0.0
-margin/right = 590.0
+margin/right = 589.0
 margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2

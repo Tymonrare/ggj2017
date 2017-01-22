@@ -72,9 +72,16 @@ margin/left = 198.0
 margin/top = 202.0
 margin/right = 441.0
 margin/bottom = 225.0
-custom_colors/font_color = Color( 0.822266, 1, 0.796875, 1 )
-text = "You can\'t click on bubbles in the storm zones, but you can affect them by using bubbles which are close to them."
-appearDelay = 1
+text = "You can\'t click on bubbles in the storm zones"
+
+[node name="appearLabel3" parent="Control" instance=ExtResource( 5 )]
+
+margin/left = 204.0
+margin/top = 371.0
+margin/right = 616.0
+margin/bottom = 394.0
+text = "But you can affect them by using bubbles which are close to them."
+appearDelay = 2
 
 [node name="zone" parent="." instance=ExtResource( 6 )]
 
