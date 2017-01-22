@@ -20,7 +20,7 @@ margin/bottom = 1534.0
 [node name="Particles2D" type="Particles2D" parent="."]
 
 transform/pos = Vector2( 784.121, 706.211 )
-config/amount = 200
+config/amount = 10
 config/lifetime = 5.0
 config/half_extents = Vector2( 700, 700 )
 params/direction = 360.0
