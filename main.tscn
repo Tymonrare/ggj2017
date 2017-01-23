@@ -49,6 +49,7 @@ limit/left = -10000
 limit/top = -10000
 limit/right = 10000
 limit/bottom = 10000
+limit/smoothed = false
 drag_margin/h_enabled = false
 drag_margin/v_enabled = false
 smoothing/enable = true
