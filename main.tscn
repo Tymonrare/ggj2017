@@ -16,7 +16,7 @@ script/source = "extends Camera2D\n\nvar mouseHolded = false;\n\nfunc _ready():\
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "\n\nfunc _on_restartButton_pressed():\n\tget_node(\"../store\").set_hidden(false);\n\tpass # replace with function body\n"
+script/source = "\nvar hidden = true;\n\nfunc _on_restartButton_pressed():\n\thidden = !hidden;\n\tget_node(\"../store\").set_hidden(hidden);\n\tpass # replace with function body\n"
 
 [sub_resource type="GDScript" id=4]
 

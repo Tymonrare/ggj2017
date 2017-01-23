@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://script/chunk_reusable.tres.gd" type="Script" id=1]
+
+[node name="chunk_reusable" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[connection signal="body_enter" from="bubble" to="bubble" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 2" to="bubble 2" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 3" to="bubble 3" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 4" to="bubble 4" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 5" to="bubble 5" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 6" to="bubble 6" method="_on_bubble_body_enter"]
+
+[connection signal="body_enter" from="bubble 7" to="bubble 7" method="_on_bubble_body_enter"]
+
+
