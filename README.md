@@ -1,5 +1,3 @@
-# ggj2017
-
 # ggj2017 game "Wavy Annihilation"
 
 ggj2017 game made on godot.
